@@ -1,0 +1,4 @@
+v 4
+file . "tb_aula4_comp_ex7.vhd" "fe583a1e3c88a89640ec4af02d4ef1f389e4496c" "20220912223147.995":
+  entity tb_aula4_comp_ex7 at 1( 0) + 0 on 11;
+  architecture teste of tb_aula4_comp_ex7 at 7( 96) + 0 on 12;

@@ -1,0 +1,7 @@
+v 4
+file . "tb_aula4_comp_ex1_b.vhd" "8ba1642d740f1608c0c5ac315968962cea1042d4" "20220912234056.485":
+  entity tb_aula4_comp_ex1_b at 1( 0) + 0 on 29;
+  architecture teste of tb_aula4_comp_ex1_b at 7( 100) + 0 on 30;
+file . "aula4_comp_ex1_b.vhd" "e77d1e6f9d31a345d237df748d022e9b6dccb576" "20220912233019.559":
+  entity aula4_comp_ex1_b at 5( 298) + 0 on 19;
+  architecture fluxo_de_dados of aula4_comp_ex1_b at 33( 1000) + 0 on 20;

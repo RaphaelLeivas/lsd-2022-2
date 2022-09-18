@@ -1,0 +1,13 @@
+v 4
+file . "tb_comp_ex2.vhd" "18f3def9b90174ba30292e1fd6517ad4277fba5b" "20220908180848.704":
+  entity tb_comp_ex2 at 1( 0) + 0 on 47;
+  architecture teste of tb_comp_ex2 at 7( 84) + 0 on 48;
+file . "tb_comp_ex1.vhd" "c63c5d00cd14a890d7d3feb5c21fd767818716df" "20220905234104.880":
+  entity tb_comp_ex1 at 1( 0) + 0 on 35;
+  architecture teste of tb_comp_ex1 at 7( 84) + 0 on 36;
+file . "comp_ex1.vhd" "7a963327d1d6704f9deace605a6dba0874f5f3ff" "20220905234104.838":
+  entity comp_ex1 at 2( 2) + 0 on 33;
+  architecture fluxo_de_dados of comp_ex1 at 10( 144) + 0 on 34;
+file . "comp_ex2.vhd" "1296082c4376e16e83172f94ab9561486290e948" "20220908180848.681":
+  entity comp_ex2 at 4( 116) + 0 on 45;
+  architecture fluxo_de_dados of comp_ex2 at 13( 267) + 0 on 46;
