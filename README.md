@@ -7,8 +7,6 @@ Repositório para os códigos da disciplina de laboratório de Sistemas Digitais
 
 ## :computer:  Configuração de ambiente (Windows) :computer:
 
-## :computer:  Configuração de ambiente (Windows) :computer:
-
 Para configurar o ambiente local da máquina, siga o passo a passo
 (ou siga o PDF de instalação na pasta /docs.)
 
