@@ -1,7 +1,7 @@
 v 4
-file . "tb_aula4_comp_ex1_b.vhd" "8ba1642d740f1608c0c5ac315968962cea1042d4" "20220912234056.485":
-  entity tb_aula4_comp_ex1_b at 1( 0) + 0 on 29;
-  architecture teste of tb_aula4_comp_ex1_b at 7( 100) + 0 on 30;
-file . "aula4_comp_ex1_b.vhd" "e77d1e6f9d31a345d237df748d022e9b6dccb576" "20220912233019.559":
-  entity aula4_comp_ex1_b at 5( 298) + 0 on 19;
-  architecture fluxo_de_dados of aula4_comp_ex1_b at 33( 1000) + 0 on 20;
+file . "ComponentEx1.vhd" "1d7a88a759bafdc5d34cbd5c647ff0c71b5c3e16" "20220924231018.056":
+  entity componentex1 at 5( 118) + 0 on 319;
+  architecture arch_componentex1 of componentex1 at 15( 304) + 0 on 320;
+file . "tb_ComponentEx1.vhd" "4a4ab69de42cf1db62d24ea8b2c0f71834b66863" "20220924231018.080":
+  entity tb_componentex1 at 1( 0) + 0 on 321;
+  architecture teste of tb_componentex1 at 7( 92) + 0 on 322;
