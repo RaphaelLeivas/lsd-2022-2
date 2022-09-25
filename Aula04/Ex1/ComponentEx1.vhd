@@ -1,6 +1,8 @@
---- Pag 48 Exercicio 1 (b)
+-- Componente do Exercício 1 (b) página 68
 -- a expressão booleana da questão pode ser reduzida para
 -- F(A,B,C,D) = CB' + CD'
+-- Resolver com tanto CASE quanto usando IF - ELSIF
+-- Livro Free Range VHDL por Bryan Mealy e Fabrizio Tappero, 2018
 
 library ieee;
 use ieee.std_logic_1164.all;
@@ -13,12 +15,7 @@ entity ComponentEx1 is
 end ComponentEx1;
 
 architecture arch_ComponentEx1 of ComponentEx1 is
-  signal ABCD : std_logic_vector (3 downto 0);
-  signal F_out : std_logic;
 begin
-  ABCD <= a & b & c & d;
-  f <= F_out;
-
   process_ComponentEx1 : process (a, b, c, d)
   begin
     -- USANDO IF ELSIF
@@ -28,19 +25,18 @@ begin
     -- end if;
 
     -- USANDO CASE
-    -- report "The value of ABCD is " &  integer'image(to_integer(unsigned(ABCD)));
-    -- assert ABCD = x"A" report "Assertion violation"  & integer'image(to_integer(unsigned(ABCD)));
+    case (c) is
+      when '1' =>
+        case (b) is
+          when '0' => f <= '1';
+          when others => f <= '0';
+        end case;
 
-    case (ABCD) is
-      when "1110" =>
-        report "The value of ABCD is " & integer'image(to_integer(unsigned(ABCD)));
-
-        F_out <= '0';
-        -- when "--10" => f <= '1';
-      when others =>
-        report "The value of ABCD is " & integer'image(to_integer(unsigned(ABCD)));
-
-        F_out <= '1';
+        case (d) is
+          when '0' => f <= '1';
+          when others => f <= '0';
+        end case;
+      when others => f <= '0';
     end case;
   end process process_ComponentEx1;
 end arch_ComponentEx1;
