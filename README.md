@@ -5,6 +5,16 @@ Repositório para os códigos da disciplina de laboratório de Sistemas Digitais
 
 :warning: Use o atalho ``` shift + alt + f ``` para formatar automaticamente o arquivo .vhdl para manter o estilo de código padronizado.
 
+## :pencil2:  Padronizações de código :pencil2:
+
+:warning: Use o atalho ``` shift + alt + f ``` para formatar automaticamente o arquivo .vhdl para manter o estilo de código padronizado.
+
+- Nome de componente / entidade: UpperCamelCase. Ex: ComponentEx7 <br />
+    Evite nomes muitos longos (e com muitos underlines) para facilitar manutenção.
+- Nome de testbench: tb_ComponentEx7
+- Nome de process: process_ComponentEx7
+- Nome de arquitetura: arch_ComponentEx7 / arch_tb_ComponentEx7
+
 ## :computer:  Configuração de ambiente (Windows) :computer:
 
 Para configurar o ambiente local da máquina, siga o passo a passo

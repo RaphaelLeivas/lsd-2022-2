@@ -1,4 +1,7 @@
 v 4
-file . "tb_aula4_comp_ex7.vhd" "fe583a1e3c88a89640ec4af02d4ef1f389e4496c" "20220912223147.995":
-  entity tb_aula4_comp_ex7 at 1( 0) + 0 on 11;
-  architecture teste of tb_aula4_comp_ex7 at 7( 96) + 0 on 12;
+file . "ComponentEx7.vhd" "8880c765325c6e3ef18e2e66c0d23d28b1588890" "20220925013611.754":
+  entity componentex7 at 6( 272) + 0 on 57;
+  architecture arch_componentex7 of componentex7 at 16( 483) + 0 on 58;
+file . "tb_ComponentEx7.vhd" "fc642f50cbb7da018ce44a18c5cb8aa1f91c4e37" "20220925013612.000":
+  entity tb_componentex7 at 1( 0) + 0 on 59;
+  architecture arch_tb_componentex7 of tb_componentex7 at 7( 98) + 0 on 60;

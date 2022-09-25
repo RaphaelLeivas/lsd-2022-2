@@ -1,7 +1,7 @@
 v 4
-file . "tb_comp_ex1.vhd" "92fe83432938ce6abbc4a1cebb047dce949dedc5" "20220908180825.306":
-  entity tb_comp_ex1 at 1( 0) + 0 on 43;
-  architecture teste of tb_comp_ex1 at 7( 84) + 0 on 44;
-file . "comp_ex1.vhd" "02ce5113e40261f0e22289eaa89ec42550f032db" "20220908180825.285":
-  entity comp_ex1 at 4( 116) + 0 on 41;
-  architecture fluxo_de_dados of comp_ex1 at 13( 261) + 0 on 42;
+file . "tb_comp_ex1.vhd" "92fe83432938ce6abbc4a1cebb047dce949dedc5" "20220918230240.683":
+  entity tb_comp_ex1 at 1( 0) + 0 on 83;
+  architecture teste of tb_comp_ex1 at 7( 84) + 0 on 84;
+file . "comp_ex1.vhd" "02ce5113e40261f0e22289eaa89ec42550f032db" "20220918230240.659":
+  entity comp_ex1 at 4( 116) + 0 on 81;
+  architecture fluxo_de_dados of comp_ex1 at 13( 261) + 0 on 82;
