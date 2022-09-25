@@ -4,7 +4,7 @@ use IEEE.STD_LOGIC_1164.all;
 entity tb_ComponentEx1 is
 end tb_ComponentEx1;
 
-architecture teste of tb_ComponentEx1 is
+architecture arch_tb_ComponentEx1 of tb_ComponentEx1 is
 
   component ComponentEx1 is
     port (
@@ -19,4 +19,4 @@ begin
   B <= '0', '0' after 10 ns, '0' after 20 ns, '0' after 30 ns, '0' after 40 ns;
   C <= '1', '0' after 10 ns, '1' after 20 ns, '0' after 30 ns, '0' after 40 ns;
   D <= '0', '0' after 10 ns, '0' after 20 ns, '0' after 30 ns, '0' after 40 ns;
-end teste;
+end arch_tb_ComponentEx1;

@@ -1,7 +1,7 @@
 v 4
-file . "tb_ComponentEx1.vhd" "4a4ab69de42cf1db62d24ea8b2c0f71834b66863" "20220925012603.460":
-  entity tb_componentex1 at 1( 0) + 0 on 447;
-  architecture teste of tb_componentex1 at 7( 92) + 0 on 448;
-file . "ComponentEx1.vhd" "84ec0ef773aae9913121c0a4dc54fbd25de8e657" "20220925012602.909":
-  entity componentex1 at 7( 256) + 0 on 445;
-  architecture arch_componentex1 of componentex1 at 17( 442) + 0 on 446;
+file . "tb_ComponentEx1.vhd" "c5d139feaf0b81047540b583d2e981092a7ce8eb" "20220925013409.273":
+  entity tb_componentex1 at 1( 0) + 0 on 451;
+  architecture arch_tb_componentex1 of tb_componentex1 at 7( 92) + 0 on 452;
+file . "ComponentEx1.vhd" "23b97f289e202d951caaa56887a5d3fe81b84634" "20220925013408.240":
+  entity componentex1 at 7( 256) + 0 on 449;
+  architecture arch_componentex1 of componentex1 at 17( 442) + 0 on 450;

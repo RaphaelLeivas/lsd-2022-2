@@ -13,9 +13,9 @@ entity ComponentEx7 is
     y : out std_logic_vector(7 downto 0));
 end ComponentEx7;
 
-architecture fluxo_de_dados of ComponentEx7 is
+architecture arch_ComponentEx7 of ComponentEx7 is
 begin
-  myComponentEx7 : process (a, e)
+  process_ComponentEx7 : process (a, e)
   begin
     -- USANDO IF - ELSIF
     if (e = '1') then
@@ -50,5 +50,5 @@ begin
     --     end case;
     --   when others => y <= "11111111"; -- todas saídas desativas
     -- end case;
-  end process myComponentEx7;
-end fluxo_de_dados;
+  end process process_ComponentEx7;
+end arch_ComponentEx7;
