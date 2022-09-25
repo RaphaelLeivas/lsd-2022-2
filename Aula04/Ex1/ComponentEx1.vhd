@@ -14,10 +14,12 @@ end ComponentEx1;
 
 architecture arch_ComponentEx1 of ComponentEx1 is
   signal ABCD : std_logic_vector (3 downto 0);
+  signal F_out : std_logic;
 begin
-  process_ComponentEx1 : process (a, b, c, d)
-    variable count : integer := 0;
+  ABCD <= a & b & c & d;
+  f <= F_out;
 
+  process_ComponentEx1 : process (a, b, c, d)
   begin
     -- USANDO IF ELSIF
     -- if (c = '1' and b = '0') then f <= '1';
@@ -29,23 +31,16 @@ begin
     -- report "The value of ABCD is " &  integer'image(to_integer(unsigned(ABCD)));
     -- assert ABCD = x"A" report "Assertion violation"  & integer'image(to_integer(unsigned(ABCD)));
 
-    ABCD <= a & b & c & d;
-
     case (ABCD) is
-      when "1010" =>
-        report "INSIDE CASE NOW - Interation Number " & integer'image(count);
+      when "1110" =>
         report "The value of ABCD is " & integer'image(to_integer(unsigned(ABCD)));
 
-        f <= '1';
+        F_out <= '0';
         -- when "--10" => f <= '1';
       when others =>
-        report "INSIDE OTHERS NOW - Interation Number " & integer'image(count);
         report "The value of ABCD is " & integer'image(to_integer(unsigned(ABCD)));
 
-        f <= '0';
+        F_out <= '1';
     end case;
-
-    count := count + 1;
-
   end process process_ComponentEx1;
 end arch_ComponentEx1;

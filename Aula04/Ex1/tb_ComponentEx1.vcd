@@ -1,5 +1,5 @@
 $date
-  Sat Sep 24 20:10:18 2022
+  Sat Sep 24 21:31:03 2022
 $end
 $version
   GHDL v0
@@ -26,6 +26,7 @@ $var reg 1 ( c $end
 $var reg 1 ) d $end
 $var reg 1 * f $end
 $var reg 4 + abcd[3:0] $end
+$var reg 1 , f_out $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
@@ -41,31 +42,11 @@ $enddefinitions $end
 0)
 1*
 b1010 +
-#10000000
-0!
-0#
-0%
-0&
-0(
-0*
-b0000 +
+1,
 #20000000
-1!
-1#
-1%
-1&
-1(
-1*
-b1010 +
 #30000000
-0!
-0#
-0%
-0&
-0(
-0*
-b0000 +
+1"
+1'
+b1110 +
 #40000000
-1!
-1&
-b1000 +
+#50000000

@@ -1,5 +1,5 @@
 $date
-  Sun Sep 18 20:07:42 2022
+  Sat Sep 24 22:10:24 2022
 $end
 $version
   GHDL v0
@@ -12,30 +12,50 @@ $upscope $end
 $scope module std_logic_1164 $end
 $upscope $end
 $scope module tb_componentex7 $end
-$var reg 1 ! a $end
-$var reg 1 " b $end
-$var reg 1 # f $end
+$var reg 3 ! a[2:0] $end
+$var reg 1 " e $end
+$var reg 8 # y[7:0] $end
 $scope module instancia_componentex7 $end
-$var reg 1 $ a $end
-$var reg 1 % b $end
-$var reg 1 & f $end
+$var reg 3 $ a[2:0] $end
+$var reg 1 % e $end
+$var reg 8 & y[7:0] $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
-0!
+b000 !
 0"
-0#
-0$
+b11111110 #
+b000 $
 0%
-0&
-#10000000
+b11111110 &
 #20000000
-1!
-1#
-1$
-1&
-#30000000
+1"
+b11111111 #
+1%
+b11111111 &
 #40000000
-#50000000
+b001 !
+b001 $
 #60000000
+b010 !
+0"
+b11111011 #
+b010 $
+0%
+b11111011 &
+#80000000
+b100 !
+b11101111 #
+b100 $
+b11101111 &
+#100000000
+b110 !
+b10111111 #
+b110 $
+b10111111 &
+#120000000
+b111 !
+b01111111 #
+b111 $
+b01111111 &
