@@ -3,8 +3,6 @@ Repositório para os códigos da disciplina de laboratório de Sistemas Digitais
 
 :warning: Lembre de trocar o endereço dos diretórios ao rodar os scripts de compilação!
 
-:warning: Use o atalho ``` shift + alt + f ``` para formatar automaticamente o arquivo .vhdl para manter o estilo de código padronizado.
-
 ## :pencil2:  Padronizações de código :pencil2:
 
 :warning: Use o atalho ``` shift + alt + f ``` para formatar automaticamente o arquivo .vhdl para manter o estilo de código padronizado.
@@ -27,8 +25,7 @@ Repositório para os códigos da disciplina de laboratório de Sistemas Digitais
 - Se tiver erros de compilação, o script que rodamos NÃO PARA NO ERRO, e assim ele continua executando, chama o 
 GTKWAVE mesmo com o erro de compilação. Por causa disso, quando há erros, fica difícil ver os logs de erro no terminal
 e o GTKWAVE sempre abre com a ultima versão que compilou com sucesso.
-<br />
-Solução: usar comandos ``` pause ``` no script e ir fazendo passo a passo, comando a comando e vendo os logs de erro. Se
+<br /> Solução: usar comandos ``` pause ``` no script e ir fazendo passo a passo, comando a comando e vendo os logs de erro. Se
 der warning em algum comando, usar ``` CTRL + C ```, abortar o script, corrigir, salvar e rodar de novo.
 
 - O erro do signals aparecendo undefined no GTKWAVE possivelmente é consequência do erro acima. Da erro de compilação, não vemos o log porque ele sempre abre o GTKWAVE no script, aí compila o .vcd antigo pois teve erro e não vimos.
