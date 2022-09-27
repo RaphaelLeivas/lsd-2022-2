@@ -14,5 +14,5 @@ end ComponentEx;
 
 architecture arch_ComponentEx of ComponentEx is
 begin
-  f <= (x * not x) + (x * not x); -- f(x) = r * x * not(x)
+  f <= (x * not x) sll 1; -- shift left equivale a multiplicar por dois
 end arch_ComponentEx;

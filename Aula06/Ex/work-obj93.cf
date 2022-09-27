@@ -1,0 +1,13 @@
+v 4
+file . "ComponentEx.vhd" "08a21ed057e75148b92ee011592ced28dcad9028" "20220927182937.943":
+  entity componentex at 4( 102) + 0 on 667;
+  architecture arch_componentex of componentex at 17( 376) + 0 on 668;
+file . "ComponentEx1.vhd" "23b97f289e202d951caaa56887a5d3fe81b84634" "20220925013408.240":
+  entity componentex1 at 7( 256) + 0 on 449;
+  architecture arch_componentex1 of componentex1 at 17( 442) + 0 on 450;
+file . "tb_ComponentEx1.vhd" "c5d139feaf0b81047540b583d2e981092a7ce8eb" "20220925013409.273":
+  entity tb_componentex1 at 1( 0) + 0 on 451;
+  architecture arch_tb_componentex1 of tb_componentex1 at 7( 92) + 0 on 452;
+file . "tb_ComponentEx.vhd" "9878d30c9da606eb3e15fe85dad9f1384d351cbb" "20220927182938.674":
+  entity tb_componentex at 1( 0) + 0 on 669;
+  architecture arch_tb_componentex of tb_componentex at 8( 116) + 0 on 670;
