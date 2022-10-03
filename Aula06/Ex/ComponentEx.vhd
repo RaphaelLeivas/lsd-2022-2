@@ -1,5 +1,5 @@
 -- Componente da Atividade pratica da Guia de Aula 06
--- ALU de 8 bits com 6 operacoes selecionaveis
+-- ULA de 8 bits com 6 operacoes selecionaveis
 
 library ieee;
 use ieee.std_logic_1164.all;
@@ -9,30 +9,25 @@ entity ComponentEx is
   port (
     a, b : in std_logic_vector(7 downto 0);
     s : in std_logic_vector(2 downto 0);
-    o : out std_logic_vector(7 downto 0);
-    co : out std_logic
+    o : out std_logic_vector(7 downto 0)
   );
 end ComponentEx;
 
 architecture arch_ComponentEx of ComponentEx is
 begin
   process_ComponentEx1 : process (a, b, s)
-    variable signedTemp : signed(8 downto 0) := '0' & (signed(a) + signed(b));
-    variable unsignedTemp : unsigned(8 downto 0) := '0' & (unsigned(a) + unsigned(b));
-  begin
+    begin
     -- ainda falta entender o que fazer com o carry out CO da ALU
 
     case (s) is
       when "000" =>
         -- somador com sinal
         o <= std_logic_vector(signed(a) + signed(b));
-        -- co <= signedTemp(8);
-
+        
       when "001" =>
         -- somador sem sinal
         o <= std_logic_vector(unsigned(a) + unsigned(b));
-        -- co <= unsignedTemp(8);
-
+        
       when "010" =>
         -- subtrator
         o <= std_logic_vector(signed(a) - signed(b));
