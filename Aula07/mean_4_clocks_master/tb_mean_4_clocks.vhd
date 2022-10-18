@@ -43,11 +43,7 @@ begin
   reset : process
   begin
     ENT_RESET <= '0';
-    wait for 2 * PERIODO; -- um reset de duração de 2 períodos de clock
-    ENT_RESET <= '1';
-    wait for 4 * PERIODO;
-    ENT_RESET <= '0';
-    wait for 4 * PERIODO;
+    wait for 1 * PERIODO; -- um reset de duração de 1 períodos de clock
     ENT_RESET <= '0';
 
     wait;
@@ -55,13 +51,13 @@ begin
   -- um outro process para os estímulos da entrada D
   stimulus : process
   begin
-    ENT_INPUT <= x"00000001";
-    wait for 4 * PERIODO;
     ENT_INPUT <= x"00000002";
-    wait for 4 * PERIODO;
-    ENT_INPUT <= x"00000003";
-    wait for 4 * PERIODO;
+    wait for 1 * PERIODO;
     ENT_INPUT <= x"00000004";
+    wait for 1 * PERIODO;
+    ENT_INPUT <= x"00000006";
+    wait for 1 * PERIODO;
+    ENT_INPUT <= x"00000008";
     wait;
   end process stimulus;
 end arch_tb_mean_4_clocks;

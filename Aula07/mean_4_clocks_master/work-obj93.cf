@@ -1,7 +1,7 @@
 v 4
-file . "tb_mean_4_clocks.vhd" "4f49dfd9ccd8fe07341ddcf270013f503445b462" "20221017150601.458":
-  entity tb_mean_4_clocks at 1( 0) + 0 on 21;
-  architecture arch_tb_mean_4_clocks of tb_mean_4_clocks at 8( 127) + 0 on 22;
-file . "mean_4_clocks.vhd" "c0d4c2a11e062b5cb9743339678864804f1f2cd5" "20221017150601.032":
-  entity mean_4_clocks at 18( 778) + 0 on 19;
-  architecture arch of mean_4_clocks at 40( 1426) + 0 on 20;
+file . "mean_4_clocks.vhd" "12b90e71a86f137575479f04e1585d70f1f15df3" "20221017224812.825":
+  entity mean_4_clocks at 18( 778) + 0 on 49;
+  architecture arch of mean_4_clocks at 40( 1426) + 0 on 50;
+file . "tb_mean_4_clocks.vhd" "9c626d52169c67eb08b224cfa7b4fa1e6089d6cf" "20221017224814.932":
+  entity tb_mean_4_clocks at 1( 0) + 0 on 51;
+  architecture arch_tb_mean_4_clocks of tb_mean_4_clocks at 8( 127) + 0 on 52;

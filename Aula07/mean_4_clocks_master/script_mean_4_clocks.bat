@@ -1,5 +1,5 @@
 :: Modifique a linha abaixo para o caminho do seu computador onde se encontra os seus arquivos fonte a serem compilados e simulados.
-cd C:\dev\lsd-2022-2\Aula07\mean_4_clocks_master
+cd C:\Aula07\mean_4_clocks_master
 
 :: Modifique as linhas seguintes para incluir os arquivos .vhd que deseja analisar (compilar).
 ghdl -a mean_4_clocks.vhd

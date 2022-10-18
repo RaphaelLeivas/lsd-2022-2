@@ -44,6 +44,7 @@ begin
         variable var2 : unsigned(W - 1 downto 0);
         variable var3 : unsigned(W - 1 downto 0);
         variable var4 : unsigned(W - 1 downto 0);
+        variable total : unsigned(W - 1 downto 0);
     begin
         if (RESET = '1') then
             var1 := to_unsigned(0,W);
@@ -51,13 +52,15 @@ begin
             var3 := to_unsigned(0,W);
             var4 := to_unsigned(0,W);
         elsif (rising_edge(CLK)) then
-            var1 := unsigned("00" & INPUT(W-1 downto 2));
-            var2 := var1;
-            var3 := var2;
             var4 := var3;
+            var3 := var2;
+            var2 := var1;
+            var1 := unsigned(INPUT);
         end if;
         
-        OUTPUT <= std_logic_vector(var1 + var2 + var3 + var4);
+        total := var1 + var2 + var3 + var4;
+
+        OUTPUT <= std_logic_vector(unsigned("00" & total(W-1 downto 2)));
     end process;
     
 end arch;
