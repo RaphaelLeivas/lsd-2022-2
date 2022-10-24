@@ -13,6 +13,7 @@ Repositório para os códigos da disciplina de laboratório de Sistemas Digitais
 - Nome de process: process_ComponentEx7
 - Nome de arquitetura: arch_ComponentEx7 / arch_tb_ComponentEx7
 - Nome do arquivo script: scriptEx7.bat
+- Nome de constantes: ALL_CAPS
 
 <br />Com essas padronizações, fica fácil renomear os componentes usando ``` CTRL + D ``` no VS Code.
 
