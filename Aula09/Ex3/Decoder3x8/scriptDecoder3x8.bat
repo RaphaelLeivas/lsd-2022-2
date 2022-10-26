@@ -1,5 +1,5 @@
 :: Modifique a linha abaixo para o caminho do seu computador onde se encontra os seus arquivos fonte a serem compilados e simulados.
-cd C:\dev\lsd-2022-2\Aula09\Ex3
+cd C:\dev\lsd-2022-2\Aula09\Ex3\Decoder3x8
 pause
 
 :: Modifique as linhas seguintes para incluir os arquivos .vhd que deseja analisar (compilar).

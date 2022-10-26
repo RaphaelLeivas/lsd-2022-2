@@ -2,7 +2,7 @@
 cd C:\dev\lsd-2022-2\Aula09\Ex3
 
 :: Modifique as linhas seguintes para incluir os arquivos .vhd que deseja analisar (compilar).
-ghdl -a Decoder3x8.vhd
+ghdl -a Decoder3x8/Decoder3x8.vhd
 pause
 ghdl -a ComponentEx3.vhd
 pause
