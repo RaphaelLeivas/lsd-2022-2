@@ -8,7 +8,8 @@ entity Somador4Bits is
   port (
     A, B : in std_logic_vector(3 downto 0);
     F : out std_logic_vector(3 downto 0);
-    CO : out std_logic);
+    CO : out std_logic
+);
 end Somador4Bits;
 
 architecture arch_Somador4Bits of Somador4Bits is

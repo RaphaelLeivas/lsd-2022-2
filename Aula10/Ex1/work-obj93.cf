@@ -1,10 +1,10 @@
 v 4
-file . "Somador4Bits.vhd" "3067b5ee1b092b1e32854af5d1fb5f38cd8665d0" "20221121142329.411":
-  entity somador4bits at 5( 180) + 0 on 37;
-  architecture arch_somador4bits of somador4bits at 16( 423) + 0 on 38;
+file . "Somador4Bits.vhd" "c8986162e8589d4419b45f3a689b32a02833bd53" "20221121162550.223":
+  entity somador4bits at 3( 35) + 0 on 117;
+  architecture arch_somador4bits of somador4bits at 15( 280) + 0 on 118;
 file . "Decoder7Seg.vhd" "b0877e164de1766c9956d9cc060970cfa80a07ab" "20221121140021.427":
   entity decoder7seg at 5( 180) + 0 on 11;
   architecture arch_decoder7seg of decoder7seg at 14( 383) + 0 on 12;
-file . "tb_Somador4Bits.vhd" "403c78a1641051522db713e47e4185b0f26e10de" "20221121142330.316":
-  entity tb_somador4bits at 1( 0) + 0 on 39;
-  architecture arch_tb_somador4bits of tb_somador4bits at 7( 92) + 0 on 40;
+file . "tb_Somador4Bits.vhd" "8157de9475914099e50a0798642d53055d577e1e" "20221121162550.803":
+  entity tb_somador4bits at 1( 0) + 0 on 119;
+  architecture tb of tb_somador4bits at 11( 207) + 0 on 120;
