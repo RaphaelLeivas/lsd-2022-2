@@ -1,0 +1,65 @@
+$date
+  Mon Nov 21 11:23:32 2022
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module tb_somador4bits $end
+$var reg 4 ! a[3:0] $end
+$var reg 4 " b[3:0] $end
+$var reg 4 # f[3:0] $end
+$var reg 1 $ co $end
+$scope module dut $end
+$var reg 4 % a[3:0] $end
+$var reg 4 & b[3:0] $end
+$var reg 4 ' f[3:0] $end
+$var reg 1 ( co $end
+$var reg 5 ) temp[4:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b0000 !
+b0000 "
+b0000 #
+U$
+b0000 %
+b0000 &
+b0000 '
+0(
+b00000 )
+#20000000
+b0010 !
+b0010 "
+b0100 #
+b0010 %
+b0010 &
+b0100 '
+b00100 )
+#40000000
+b1000 !
+b1000 "
+b0000 #
+b1000 %
+b1000 &
+b0000 '
+1(
+b10000 )
+#60000000
+b1101 !
+b1101 "
+b1010 #
+b1101 %
+b1101 &
+b1010 '
+b11010 )
+#80000000
