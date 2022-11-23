@@ -1,10 +1,13 @@
 v 4
-file . "OR4x1/OR4x1.vhd" "f6e5f21ca0b38306ac9e0a89c839e94454b53eba" "20221104120647.857":
-  entity or4x1 at 4( 130) + 0 on 103;
-  architecture arch_or4x1 of or4x1 at 13( 297) + 0 on 104;
-file . "Decoder3x8/Decoder3x8.vhd" "be9da42bef55fffd22ad9832fffdaf974f1f1749" "20221104120646.349":
-  entity decoder3x8 at 4( 130) + 0 on 101;
-  architecture arch_decoder3x8 of decoder3x8 at 14( 356) + 0 on 102;
+file . "tb_Projeto02.vhd" "8bc011ea861e677ece94a6e4f4d4ade73d93c393" "20221123183948.063":
+  entity tb_projeto02 at 1( 0) + 0 on 115;
+  architecture arch_tb_projeto02 of tb_projeto02 at 8( 119) + 0 on 116;
+file . "OR4x1/OR4x1.vhd" "f6e5f21ca0b38306ac9e0a89c839e94454b53eba" "20221123183946.870":
+  entity or4x1 at 4( 130) + 0 on 111;
+  architecture arch_or4x1 of or4x1 at 13( 297) + 0 on 112;
+file . "Decoder3x8/Decoder3x8.vhd" "be9da42bef55fffd22ad9832fffdaf974f1f1749" "20221123183945.801":
+  entity decoder3x8 at 4( 130) + 0 on 109;
+  architecture arch_decoder3x8 of decoder3x8 at 14( 356) + 0 on 110;
 file . "tb_Decoder3x8.vhd" "7f21a4a2369ff5ebdefbca6cf2485954bba3c27b" "20221026001505.874":
   entity tb_decoder3x8 at 1( 0) + 0 on 51;
   architecture arch_tb_decoder3x8 of tb_decoder3x8 at 7( 94) + 0 on 52;
@@ -20,3 +23,6 @@ file . "ComponentEx.vhd" "20a7443db7969b963c3934a607f7f780ae1fd169" "20221017142
 file . "ComponentEx3.vhd" "802e406eaeff18e4593eaddef279e72bfe43dc93" "20221104120648.959":
   entity componentex3 at 4( 115) + 0 on 105;
   architecture arch_componentex3 of componentex3 at 16( 304) + 0 on 106;
+file . "Projeto02.vhd" "1e185b543534514843b0e31dfd0c52a49e55a045" "20221123183947.512":
+  entity projeto02 at 4( 115) + 0 on 113;
+  architecture arch_projeto02 of projeto02 at 16( 298) + 0 on 114;

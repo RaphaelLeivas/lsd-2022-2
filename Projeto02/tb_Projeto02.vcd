@@ -1,0 +1,87 @@
+$date
+  Wed Nov 23 15:39:49 2022
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module tb_projeto02 $end
+$var reg 1 ! a_tb $end
+$var reg 1 " b_tb $end
+$var reg 1 # c_tb $end
+$var reg 1 $ f_tb $end
+$scope module instancia_projeto02 $end
+$var reg 1 % a $end
+$var reg 1 & b $end
+$var reg 1 ' c $end
+$var reg 1 ( f $end
+$var reg 8 ) internal_bus[7:0] $end
+$var reg 1 * internal_dec_enable $end
+$scope module my_dec $end
+$var reg 3 + dec_input[2:0] $end
+$var reg 1 , dec_en $end
+$var reg 8 - dec_out[7:0] $end
+$upscope $end
+$scope module my_or $end
+$var reg 4 . or_input[3:0] $end
+$var reg 1 / or_out $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+0!
+0"
+0#
+1$
+0%
+0&
+0'
+1(
+b00000001 )
+0*
+b000 +
+0,
+b00000001 -
+b0001 .
+1/
+#40000000
+1!
+1%
+b00010000 )
+b100 +
+b00010000 -
+b1000 .
+#80000000
+0!
+1"
+0$
+0%
+1&
+0(
+b00000100 )
+b010 +
+b00000100 -
+b0000 .
+0/
+#120000000
+0"
+1#
+1$
+0&
+1'
+1(
+b00000010 )
+b001 +
+b00000010 -
+b0010 .
+1/
+#160000000

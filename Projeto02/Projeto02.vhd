@@ -6,14 +6,14 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity ComponentEx3 is
+entity Projeto02 is
   port (
     A, B, C : in std_logic;
     F : out std_logic
   );
-end ComponentEx3;
+end Projeto02;
 
-architecture arch_ComponentEx3 of ComponentEx3 is
+architecture arch_Projeto02 of Projeto02 is
   -- puxa o decoder feito no outro arquivo
   component Decoder3x8 is
     port (
@@ -36,7 +36,7 @@ architecture arch_ComponentEx3 of ComponentEx3 is
 begin
   INTERNAL_DEC_ENABLE <= '0'; -- sempre ativado por enquanto
 
-  -- mapeia do decoder para o ComponentEx3 (alto nivel)
+  -- mapeia do decoder para o Projeto02 (alto nivel)
   my_dec : Decoder3x8 port map(
     DEC_INPUT(2) => A,
     DEC_INPUT(1) => B,
@@ -55,4 +55,4 @@ begin
 
   
 
-end arch_ComponentEx3;
+end arch_Projeto02;
