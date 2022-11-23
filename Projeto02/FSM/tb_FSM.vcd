@@ -1,5 +1,5 @@
 $date
-  Wed Nov 23 15:33:46 2022
+  Wed Nov 23 15:45:17 2022
 $end
 $version
   GHDL v0
@@ -20,7 +20,7 @@ $var reg 1 # ent_x $end
 $var reg 3 $ sai_y[2:0] $end
 $var reg 2 % sai_z[1:0] $end
 $scope module dut $end
-$var reg 1 & clk $end
+$var reg 1 & clk_fsm $end
 $var reg 1 ' x $end
 $var reg 3 ( y[2:0] $end
 $var reg 2 ) z[1:0] $end

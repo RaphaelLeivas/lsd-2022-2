@@ -9,7 +9,7 @@ architecture arch_tb_FSM of tb_FSM is
 
   component FSM is
     port (
-      CLK : in std_logic;
+      CLK_FSM : in std_logic;
       X : in std_logic; -- entradas da FSM
       Y : out std_logic_vector(2 downto 0); -- saidas para os proximos estados da FSM
       Z : out std_logic_vector(1 downto 0)); -- saida efetiva da FSM
@@ -29,7 +29,7 @@ begin
 
   -- instanciação do DUT, que nesse exemplo é um ffd
   DUT : FSM port map(
-    CLK => ENT_CLK,
+    CLK_FSM => ENT_CLK,
     X => ENT_X,
     Y => SAI_Y,
     Z => SAI_Z

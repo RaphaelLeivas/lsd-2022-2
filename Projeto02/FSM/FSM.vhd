@@ -6,7 +6,7 @@ use IEEE.std_logic_1164.all;
 
 entity FSM is
   port (
-    CLK : in std_logic;
+    CLK_FSM : in std_logic;
     X : in std_logic; -- entradas da FSM
     Y : out std_logic_vector(2 downto 0); -- saidas para os proximos estados da FSM
     Z : out std_logic_vector(1 downto 0)); -- saida efetiva da FSM
@@ -18,9 +18,9 @@ architecture arch_FSM of FSM is
   attribute ENUM_ENCODING of state_type : type is "000 001 010 011 100 101 110 111";
   signal PS, NS : state_type;
 begin
-  sync_process : process (CLK, NS)
+  sync_process : process (CLK_FSM, NS)
   begin
-    if (rising_edge(CLK)) then
+    if (rising_edge(CLK_FSM)) then
       PS <= NS;
     end if;
   end process sync_process;

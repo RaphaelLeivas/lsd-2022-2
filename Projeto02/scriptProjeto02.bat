@@ -2,9 +2,9 @@
 cd C:\dev\lsd-2022-2\Projeto02
 
 :: Modifique as linhas seguintes para incluir os arquivos .vhd que deseja analisar (compilar).
-ghdl -a Decoder3x8/Decoder3x8.vhd
+ghdl -a ClockDivider/ClockDivider.vhd
 pause
-ghdl -a OR4x1/OR4x1.vhd
+ghdl -a FSM/FSM.vhd
 pause
 ghdl -a Projeto02.vhd
 pause
