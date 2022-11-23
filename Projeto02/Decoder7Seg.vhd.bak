@@ -7,8 +7,8 @@ use ieee.std_logic_1164.all;
 
 entity Decoder7Seg is
   port (
-    BCD_INPUT : in std_logic_vector(0 to 3);
-    BCD_OUTPUT : out std_logic_vector(0 to 7));
+    BCD_INPUT : in std_logic_vector(3 downto 0);
+    BCD_OUTPUT : out std_logic_vector(7 downto 0));
 end Decoder7Seg;
 
 architecture arch_Decoder7Seg of Decoder7Seg is
@@ -25,5 +25,5 @@ begin
     "00011111" when (BCD_INPUT = "0111") else
     "00000001" when (BCD_INPUT = "1000") else
     "00001001" when (BCD_INPUT = "1001") else
-    "11111111"; -- mostra zero no display  caso contrario
+    "00000011"; -- mostra zero no display  caso contrario
 end arch_Decoder7Seg;
