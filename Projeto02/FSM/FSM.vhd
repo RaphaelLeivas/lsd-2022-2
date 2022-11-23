@@ -7,15 +7,15 @@ use IEEE.std_logic_1164.all;
 entity FSM is
   port (
     CLK_FSM : in std_logic;
-    X : in std_logic; -- entradas da FSM
+    X : in std_logic; -- entrada da FSM
     Y : out std_logic_vector(2 downto 0); -- saidas para os proximos estados da FSM
-    Z : out std_logic_vector(1 downto 0)); -- saida efetiva da FSM
+    Z0 : out std_logic_vector(0 to 7)); -- saidas efetivas da FSM
 end FSM;
 
 architecture arch_FSM of FSM is
-  type state_type is (ST0, ST1, ST2, ST3, ST4, ST5, ST6, ST7);
+  type state_type is (ST0, ST1, ST2, ST3, ST4, ST5);
   attribute ENUM_ENCODING : string;
-  attribute ENUM_ENCODING of state_type : type is "000 001 010 011 100 101 110 111";
+  attribute ENUM_ENCODING of state_type : type is "000 001 010 011 100 101";
   signal PS, NS : state_type;
 begin
   sync_process : process (CLK_FSM, NS)
@@ -27,76 +27,48 @@ begin
 
   comb_process : process (PS, X)
   begin
-    Z <= "00"; -- pre-assing saidas
+    Z0 <= "01111111";
 
     case PS is
       when ST0 =>
-        Z <= "00";
-
-        if (X = '0') then
+        if (X = '1') then
           NS <= ST0;
-        else NS <= ST1;
+          Z0 <= "01111111";
+        elsif (X = '0') then
+          NS <= ST1;
+          Z0 <= "01111111";
+        else -- catch all
+          NS <= ST0;
+          Z0 <= "01111111";
         end if;
 
       when ST1 =>
-        Z <= "00";
-
-        if (X = '0') then
-          NS <= ST1;
-        else NS <= ST2;
+        if (X = '1') then
+          NS <= ST0;
+          Z0 <= "01111111";
+        elsif (X = '0') then
+          NS <= ST2;
+          Z0 <= "10111111";
+        else -- catch all
+          NS <= ST0;
+          Z0 <= "01111111";
         end if;
 
       when ST2 =>
-        Z <= "00";
-
-        if (X = '0') then
-          NS <= ST2;
-        else NS <= ST3;
-        end if;
-
-      when ST3 =>
-        Z <= "10";
-
-        if (X = '0') then
-          NS <= ST3;
-        else NS <= ST4;
-        end if;
-
-      when ST4 =>
-        Z <= "01";
-
-        if (X = '0') then
+        if (X = '1') then
           NS <= ST0;
-        else NS <= ST5;
-        end if;
-
-      when ST5 =>
-        Z <= "11";
-
-        if (X = '0') then
-          NS <= ST5;
-        else NS <= ST6;
-        end if;
-
-      when ST6 =>
-        Z <= "11";
-
-        if (X = '0') then
-          NS <= ST6;
-        else NS <= ST7;
-        end if;
-
-      when ST7 =>
-        Z <= "11";
-
-        if (X = '0') then
-          NS <= ST7;
-        else NS <= ST0;
+          Z0 <= "01111111";
+        elsif (X = '0') then
+          NS <= ST0;
+          Z0 <= "11011111";
+        else -- catch all
+          NS <= ST0;
+          Z0 <= "01111111";
         end if;
 
       when others => -- catch all, nunca deve chegar aqui
-        Z <= "00";
         NS <= ST0;
+        Z0 <= "01111111";
     end case;
   end process comb_process;
 
@@ -109,7 +81,5 @@ begin
     "011" when ST3,
     "100" when ST4,
     "101" when ST5,
-    "110" when ST6,
-    "111" when ST7,
     "000" when others;
 end arch_FSM;

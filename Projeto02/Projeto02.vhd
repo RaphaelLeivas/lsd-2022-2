@@ -5,8 +5,8 @@ use ieee.numeric_std.all;
 
 entity Projeto02 is
   port (
-    CLK, RESET : in std_logic;
-    PROJ_OUT : out std_logic_vector(1 downto 0)
+    CLK_50MHz, RESET : in std_logic;
+    DISP0 : out std_logic_vector(0 to 7)
   );
 end Projeto02;
 
@@ -14,8 +14,8 @@ architecture arch_Projeto02 of Projeto02 is
   -- puxa o divisor de clock
   component ClockDivider is
     port (
-      clk_50Mhz : in std_logic;
-      clk_2Hz : out std_logic
+      CLK_INPUT : in std_logic;
+      CLK_OUTPUT : out std_logic
     );
   end component;
 
@@ -23,27 +23,25 @@ architecture arch_Projeto02 of Projeto02 is
   component FSM is
     port (
       CLK_FSM : in std_logic;
-      X : in std_logic; -- entradas da FSM
+      X : in std_logic; -- entrada da FSM
       Y : out std_logic_vector(2 downto 0); -- saidas para os proximos estados da FSM
-      Z : out std_logic_vector(1 downto 0) -- saida efetiva da FSM
-    );
+      Z0 : out std_logic_vector(0 to 7)); -- saidas efetivas da FSM
   end component FSM;
 
   -- signals intermediarios (internos ao componente de alto nivel)
-  signal INTERNAL_CLK_2HZ : std_logic;
-  signal INTERNAL_Y : std_logic_vector(2 downto 0);
+  signal INTERNAL_CLK_2Hz : std_logic;
 
 begin
   my_ClockDivider : ClockDivider port map(
-    clk_50Mhz => CLK,
-    clk_2Hz => INTERNAL_CLK_2HZ
+    CLK_INPUT => CLK_50MHz,
+    CLK_OUTPUT => INTERNAL_CLK_2Hz
   );
 
   my_FSM : FSM port map(
-    CLK_FSM => INTERNAL_CLK_2HZ,
+    CLK_FSM => INTERNAL_CLK_2Hz,
     X => RESET,
-    Y => INTERNAL_Y,
-    Z => PROJ_OUT
+    Y => open, -- nao e usado pelo componente de alto nivel, apenas pela FSM internamente
+    Z0 => DISP0
   );
 
 end arch_Projeto02;

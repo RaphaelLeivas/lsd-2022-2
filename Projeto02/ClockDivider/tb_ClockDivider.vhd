@@ -9,25 +9,25 @@ architecture arch_tb_ClockDivider of tb_ClockDivider is
 
   component ClockDivider is
     port (
-      clk_50Mhz : in std_logic;
-      clk_2Hz : out std_logic
+      CLK_INPUT : in std_logic;
+      CLK_OUTPUT : out std_logic
     );
   end component;
 
-  constant PERIODO : time := 10 ns;
-  signal ent_clk : std_logic := '0'; -- deve ser inicializado
-  signal ent_clk_enable : std_logic := '1'; -- Sinal de Enable do clock só para efeito de controle do fim da simulação
-  signal sai_clk_2Hz : std_logic;
+  constant PERIODO : time := 20 ns; -- 50 MHz
+  signal ENT_CLK : std_logic := '0'; -- deve ser inicializado
+  signal ENT_CLK_ENABLE : std_logic := '1'; -- Sinal de Enable do clock só para efeito de controle do fim da simulação
+  signal SAI_CLK_OUTPUT : std_logic;
 
 begin
   -- geração do clock com periodo PERIODO
-  ent_clk <= ent_clk_enable and not ent_clk after PERIODO/2;
-  ent_clk_enable <= '1', '0' after 40 * PERIODO; -- a simulação termina após transcorrer 20 períodos de clock.
+  ENT_CLK <= ENT_CLK_ENABLE and not ENT_CLK after PERIODO/2;
+  ENT_CLK_ENABLE <= '1', '0' after 40 * PERIODO; -- a simulação termina após transcorrer 20 períodos de clock.
 
-  -- instanciação do DUT, que nesse exemplo é um ffd
+  -- instanciação do DUT
   DUT : ClockDivider port map(
-    clk_50Mhz => ent_clk,
-    clk_2Hz => sai_clk_2Hz
+    CLK_INPUT => ENT_CLK,
+    CLK_OUTPUT => SAI_CLK_OUTPUT
   );
 
 end arch_tb_ClockDivider;

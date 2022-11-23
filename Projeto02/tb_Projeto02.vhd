@@ -9,40 +9,35 @@ architecture arch_tb_Projeto02 of tb_Projeto02 is
 
   component Projeto02 is
     port (
-      CLK, RESET : in std_logic;
-      PROJ_OUT : out std_logic_vector(1 downto 0)
+      CLK_50MHz, RESET : in std_logic;
+      DISP0 : out std_logic_vector(0 to 7)
     );
   end component;
 
-  constant PERIODO : time := 10 ns;
-  signal ent_clk : std_logic := '0'; -- deve ser inicializado
-  signal ent_clk_enable : std_logic := '1'; -- Sinal de Enable do clock só para efeito de controle do fim da simulação
-  signal sai_proj_out : std_logic_vector(1 downto 0);
-  signal ent_reset : std_logic;
+  constant PERIODO : time := 20 ns; -- 50 MHz
+  signal ENT_CLK : std_logic := '0'; -- deve ser inicializado
+  signal ENT_CLK_ENABLE : std_logic := '1'; -- Sinal de Enable do clock só para efeito de controle do fim da simulação
+  signal SAI_DISP0 : std_logic_vector(0 to 7);
+  signal ENT_RESET : std_logic;
 
 begin
   -- geração do clock com periodo PERIODO
-  ent_clk <= ent_clk_enable and not ent_clk after PERIODO/2;
-  ent_clk_enable <= '1', '0' after 200 * PERIODO; -- a simulação termina após transcorrer 20 períodos de clock.
+  ENT_CLK <= ENT_CLK_ENABLE and not ENT_CLK after PERIODO/2;
+  ENT_CLK_ENABLE <= '1', '0' after 200 * PERIODO; -- a simulação termina após transcorrer 20 períodos de clock.
 
   -- instanciação do DUT
   DUT : Projeto02 port map(
-    CLK => ent_clk,
-    RESET => ent_reset,
-    PROJ_OUT => sai_proj_out
+    CLK_50MHz => ENT_CLK,
+    RESET => ENT_RESET,
+    DISP0 => SAI_DISP0
   );
 
   --  process para os estímulos das entradas
   stimulus : process
   begin
-    ent_reset <= '0';
-    wait for 4 * PERIODO;
-    ent_reset <= '1';
-    wait for 4 * PERIODO;
-    ent_reset <= '0';
-    wait for 4 * PERIODO;
-    ent_reset <= '1';
-    wait for 4 * PERIODO;
+    ENT_RESET <= '0';
+    wait for 140 * PERIODO;
+    ENT_RESET <= '1';
     wait;
   end process stimulus;
 
