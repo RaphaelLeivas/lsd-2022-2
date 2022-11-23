@@ -1,0 +1,42 @@
+$date
+  Mon Oct 31 21:04:28 2022
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module tb_or4x1 $end
+$var reg 4 ! or_input_tb[3:0] $end
+$var reg 1 " or_out_tb $end
+$scope module instancia_or4x1 $end
+$var reg 4 # or_input[3:0] $end
+$var reg 1 $ or_out $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b0000 !
+0"
+b0000 #
+0$
+#40000000
+b0011 !
+1"
+b0011 #
+1$
+#60000000
+b0100 !
+b0100 #
+#80000000
+b1100 !
+b1100 #
+#100000000
+#120000000
+b0001 !
+b0001 #

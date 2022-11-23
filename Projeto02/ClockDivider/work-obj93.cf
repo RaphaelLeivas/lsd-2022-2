@@ -1,0 +1,13 @@
+v 4
+file . "tb_ClockDivider.vhd" "46767bd7fd9f0a85274abca5b96a978377356490" "20221123181455.493":
+  entity tb_clockdivider at 1( 0) + 0 on 25;
+  architecture arch_tb_clockdivider of tb_clockdivider at 8( 125) + 0 on 26;
+file . "tb_Decoder3x8.vhd" "7f21a4a2369ff5ebdefbca6cf2485954bba3c27b" "20221026002522.553":
+  entity tb_decoder3x8 at 1( 0) + 0 on 13;
+  architecture arch_tb_decoder3x8 of tb_decoder3x8 at 7( 94) + 0 on 14;
+file . "Decoder3x8.vhd" "be9da42bef55fffd22ad9832fffdaf974f1f1749" "20221026002521.013":
+  entity decoder3x8 at 4( 130) + 0 on 11;
+  architecture arch_decoder3x8 of decoder3x8 at 14( 356) + 0 on 12;
+file . "ClockDivider.vhd" "16b8bea4fe08717d19015eb5f298a2e7a75d4d24" "20221123181455.221":
+  entity clockdivider at 4( 101) + 0 on 23;
+  architecture arch_clockdivider of clockdivider at 14( 269) + 0 on 24;
