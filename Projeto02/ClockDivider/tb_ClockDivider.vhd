@@ -8,6 +8,10 @@ end tb_ClockDivider;
 architecture arch_tb_ClockDivider of tb_ClockDivider is
 
   component ClockDivider is
+    generic (
+      INPUT_FREQUENCY : integer := 50000000; -- 50MHz default
+      OUTPUT_FREQUENCY : integer := 2 -- 2Hz default
+    );
     port (
       CLK_INPUT : in std_logic;
       CLK_OUTPUT : out std_logic
@@ -25,7 +29,13 @@ begin
   ENT_CLK_ENABLE <= '1', '0' after 40 * PERIODO; -- a simulação termina após transcorrer 20 períodos de clock.
 
   -- instanciação do DUT
-  DUT : ClockDivider port map(
+  DUT : ClockDivider 
+  generic map(
+    INPUT_FREQUENCY => 50000000, -- 50MHz
+    OUTPUT_FREQUENCY => 5000000 -- 5MHz  -> PARA TESTBENCH  
+    -- OUTPUT_FREQUENCY => 2 -- 2Hz -> PARA FPGA  
+  )
+  port map(
     CLK_INPUT => ENT_CLK,
     CLK_OUTPUT => SAI_CLK_OUTPUT
   );

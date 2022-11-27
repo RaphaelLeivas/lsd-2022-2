@@ -13,6 +13,10 @@ end Projeto02;
 architecture arch_Projeto02 of Projeto02 is
   -- puxa o divisor de clock
   component ClockDivider is
+    generic (
+      INPUT_FREQUENCY : integer := 50000000; -- 50MHz default
+      OUTPUT_FREQUENCY : integer := 2 -- 2Hz default
+    );
     port (
       CLK_INPUT : in std_logic;
       CLK_OUTPUT : out std_logic
@@ -32,7 +36,13 @@ architecture arch_Projeto02 of Projeto02 is
   signal INTERNAL_CLK_2Hz : std_logic;
 
 begin
-  my_ClockDivider : ClockDivider port map(
+  my_ClockDivider : ClockDivider 
+  generic map(
+    INPUT_FREQUENCY => 50000000, -- 50MHz
+    OUTPUT_FREQUENCY => 5000000 -- 5MHz  -> PARA TESTBENCH  
+    -- OUTPUT_FREQUENCY => 2 -- 2Hz -> PARA FPGA  
+  )
+  port map(
     CLK_INPUT => CLK_50MHz,
     CLK_OUTPUT => INTERNAL_CLK_2Hz
   );

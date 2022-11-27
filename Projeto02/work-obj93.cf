@@ -1,10 +1,10 @@
 v 4
-file . "FSM/FSM.vhd" "e67257a4d3f6cb3741fa25ebf5ab7c787c98106e" "20221123204656.153":
-  entity fsm at 4( 103) + 0 on 195;
-  architecture arch_fsm of fsm at 15( 409) + 0 on 196;
-file . "tb_Projeto02.vhd" "b80b955b5c9e0528bf0030456a33a82bbcdddb5e" "20221123204657.052":
-  entity tb_projeto02 at 1( 0) + 0 on 199;
-  architecture arch_tb_projeto02 of tb_projeto02 at 8( 119) + 0 on 200;
+file . "FSM/FSM.vhd" "e67257a4d3f6cb3741fa25ebf5ab7c787c98106e" "20221127195830.795":
+  entity fsm at 4( 103) + 0 on 203;
+  architecture arch_fsm of fsm at 15( 409) + 0 on 204;
+file . "tb_Projeto02.vhd" "b80b955b5c9e0528bf0030456a33a82bbcdddb5e" "20221127195831.913":
+  entity tb_projeto02 at 1( 0) + 0 on 207;
+  architecture arch_tb_projeto02 of tb_projeto02 at 8( 119) + 0 on 208;
 file . "OR4x1/OR4x1.vhd" "f6e5f21ca0b38306ac9e0a89c839e94454b53eba" "20221123185147.199":
   entity or4x1 at 4( 130) + 0 on 129;
   architecture arch_or4x1 of or4x1 at 13( 297) + 0 on 130;
@@ -26,9 +26,9 @@ file . "ComponentEx.vhd" "20a7443db7969b963c3934a607f7f780ae1fd169" "20221017142
 file . "ComponentEx3.vhd" "802e406eaeff18e4593eaddef279e72bfe43dc93" "20221104120648.959":
   entity componentex3 at 4( 115) + 0 on 105;
   architecture arch_componentex3 of componentex3 at 16( 304) + 0 on 106;
-file . "Projeto02.vhd" "228da489cefe06145f80b244d20e39c8b09c3a2a" "20221123204656.598":
-  entity projeto02 at 1( 0) + 0 on 197;
-  architecture arch_projeto02 of projeto02 at 13( 211) + 0 on 198;
-file . "ClockDivider/ClockDivider.vhd" "5cbd4548f1f97ee7d7fc10501c41c1e3466694fa" "20221123204655.599":
-  entity clockdivider at 4( 101) + 0 on 193;
-  architecture arch_clockdivider of clockdivider at 14( 272) + 0 on 194;
+file . "Projeto02.vhd" "b96dd1cf050559b58d3606779e44cb50b01ea82a" "20221127195831.361":
+  entity projeto02 at 1( 0) + 0 on 205;
+  architecture arch_projeto02 of projeto02 at 13( 211) + 0 on 206;
+file . "ClockDivider/ClockDivider.vhd" "aa2e3c06d2dfbfcd23e43bb30192d6c973b605c2" "20221127195830.224":
+  entity clockdivider at 4( 103) + 0 on 201;
+  architecture arch_clockdivider of clockdivider at 19( 435) + 0 on 202;
