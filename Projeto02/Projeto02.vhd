@@ -28,7 +28,6 @@ architecture arch_Projeto02 of Projeto02 is
     port (
       CLK_FSM : in std_logic;
       X : in std_logic; -- entrada da FSM
-      Y : out std_logic_vector(2 downto 0); -- saidas para os proximos estados da FSM
       Z0 : out std_logic_vector(0 to 7)); -- saidas efetivas da FSM
   end component FSM;
 
@@ -50,7 +49,6 @@ begin
   my_FSM : FSM port map(
     CLK_FSM => INTERNAL_CLK_2Hz,
     X => RESET,
-    Y => open, -- nao e usado pelo componente de alto nivel, apenas pela FSM internamente
     Z0 => DISP0
   );
 

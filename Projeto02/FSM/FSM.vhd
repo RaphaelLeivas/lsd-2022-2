@@ -8,7 +8,6 @@ entity FSM is
   port (
     CLK_FSM : in std_logic;
     X : in std_logic; -- entrada da FSM
-    Y : out std_logic_vector(2 downto 0); -- saidas para os proximos estados da FSM
     Z0 : out std_logic_vector(0 to 7)); -- saidas efetivas da FSM
 end FSM;
 
@@ -17,6 +16,7 @@ architecture arch_FSM of FSM is
   attribute ENUM_ENCODING : string;
   attribute ENUM_ENCODING of state_type : type is "000 001 010 011 100 101";
   signal PS, NS : state_type;
+  signal Y : std_logic_vector(2 downto 0); -- signal para os proximos estados da FSM
 begin
   sync_process : process (CLK_FSM, NS)
   begin

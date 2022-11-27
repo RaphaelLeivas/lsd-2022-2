@@ -11,7 +11,6 @@ architecture arch_tb_FSM of tb_FSM is
     port (
       CLK_FSM : in std_logic;
       X : in std_logic; -- entrada da FSM
-      Y : out std_logic_vector(2 downto 0); -- saidas para os proximos estados da FSM
       Z0 : out std_logic_vector(0 to 7)); -- saidas efetivas da FSM
   end component;
 
@@ -19,7 +18,6 @@ architecture arch_tb_FSM of tb_FSM is
   signal ENT_CLK : std_logic := '0'; -- deve ser inicializado
   signal ENT_CLK_ENABLE : std_logic := '1'; -- Sinal de Enable do clock só para efeito de controle do fim da simulação
   signal ENT_X : std_logic; 
-  signal SAI_Y : std_logic_vector(2 downto 0);
   signal SAI_Z0 : std_logic_vector(0 to 7);
 
 begin
@@ -31,7 +29,6 @@ begin
   DUT : FSM port map(
     CLK_FSM => ENT_CLK,
     X => ENT_X,
-    Y => SAI_Y,
     Z0 => SAI_Z0
   );
 
