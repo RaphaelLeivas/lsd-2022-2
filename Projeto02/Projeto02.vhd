@@ -6,7 +6,7 @@ use ieee.numeric_std.all;
 entity Projeto02 is
   port (
     CLK_50MHz, RESET : in std_logic;
-    DISP0 : out std_logic_vector(0 to 7)
+    DISP0, DISP1, DISP2, DISP3, DISP4, DISP5 : out std_logic_vector(0 to 7)
   );
 end Projeto02;
 
@@ -28,7 +28,7 @@ architecture arch_Projeto02 of Projeto02 is
     port (
       CLK_FSM : in std_logic;
       X : in std_logic; -- entrada da FSM
-      Z0 : out std_logic_vector(0 to 7)); -- saidas efetivas da FSM
+      Z0, Z1, Z2, Z3, Z4, Z5 : out std_logic_vector(0 to 7)); -- saidas efetivas da FSM
   end component FSM;
 
   -- signals intermediarios (internos ao componente de alto nivel)
@@ -49,7 +49,12 @@ begin
   my_FSM : FSM port map(
     CLK_FSM => INTERNAL_CLK_2Hz,
     X => RESET,
-    Z0 => DISP0
+    Z0 => DISP0,
+    Z1 => DISP1,
+    Z2 => DISP2,
+    Z3 => DISP3,
+    Z4 => DISP4,
+    Z5 => DISP5
   );
 
 end arch_Projeto02;
