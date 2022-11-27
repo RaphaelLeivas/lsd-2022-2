@@ -38,8 +38,8 @@ begin
   my_ClockDivider : ClockDivider 
   generic map(
     INPUT_FREQUENCY => 50000000, -- 50MHz
-    OUTPUT_FREQUENCY => 5000000 -- 5MHz  -> PARA TESTBENCH  
-    -- OUTPUT_FREQUENCY => 2 -- 2Hz -> PARA FPGA  
+    -- OUTPUT_FREQUENCY => 5000000 -- 5MHz  -> PARA TESTBENCH  
+    OUTPUT_FREQUENCY => 2 -- 2Hz -> PARA FPGA  
   )
   port map(
     CLK_INPUT => CLK_50MHz,
