@@ -7,4 +7,4 @@
 [x] Padronizar o código com convenções de nome de signals, etc (tanto no código quanto na imagem) <br />
 [x] Colocar imagem da arquitetura dos blocos do componente, com signals nomeados, para facilitar a avaliação <br />
 [x] Deixar a integração com os pinos do display exatamente como foi feito no Projeto01 para não ter inversão de novo. <br />
-[ ] Testar na FPGA. <br />
+[x] Testar na FPGA. <br />
