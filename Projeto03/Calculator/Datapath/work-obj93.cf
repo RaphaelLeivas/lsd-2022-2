@@ -1,7 +1,19 @@
 v 4
-file . "tb_Datapath.vhd" "2755042606fb4647daf197844246b25d663ff616" "20221212004526.115":
-  entity tb_datapath at 1( 0) + 0 on 13;
-  architecture arch_tb_datapath of tb_datapath at 8( 117) + 0 on 14;
-file . "Datapath.vhd" "9b74298ffac103e573dee09718182a593f70d8a8" "20221212004525.402":
-  entity datapath at 1( 0) + 0 on 11;
-  architecture arch_datapath of datapath at 16( 466) + 0 on 12;
+file . "StackRegister/StackRegister.vhd" "8289a85055c8b4d19112dd3dad24f4d7f01836da" "20221212133721.478":
+  entity stackregister at 3( 47) + 0 on 27;
+  architecture arch_stackregister of stackregister at 15( 309) + 0 on 28;
+file . "SelectorALU_NUM/SelectorALU_NUM.vhd" "f07cf30a8746b6b677bc595d3227b9e4bbd7cab4" "20221212133721.427":
+  entity selectoralu_num at 2( 2) + 0 on 23;
+  architecture arch_selectoralu_num of selectoralu_num at 15( 312) + 0 on 24;
+file . "Datapath.vhd" "fde81e5dce18440db362aa90ed116a7141633b11" "20221212133721.502":
+  entity datapath at 1( 0) + 0 on 29;
+  architecture arch_datapath of datapath at 18( 545) + 0 on 30;
+file . "tb_Datapath.vhd" "e73dc02ee996a63940ca95822d1ef486f2e6a4e9" "20221212133722.605":
+  entity tb_datapath at 1( 0) + 0 on 31;
+  architecture arch_tb_datapath of tb_datapath at 8( 117) + 0 on 32;
+file . "ALU/ALU.vhd" "a18bf39559eee4d498aeb27a90bce9de390b6d95" "20221212133721.400":
+  entity alu at 2( 2) + 0 on 21;
+  architecture arch_alu of alu at 14( 268) + 0 on 22;
+file . "SelectorTwoStack/SelectorTwoStack.vhd" "0c1c45ac0dd7c137ca7165ab744f7cd046d5934f" "20221212133721.453":
+  entity selectortwostack at 2( 2) + 0 on 25;
+  architecture arch_selectortwostack of selectortwostack at 14( 287) + 0 on 26;

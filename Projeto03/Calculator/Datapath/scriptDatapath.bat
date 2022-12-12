@@ -1,3 +1,8 @@
+ghdl -a ALU/ALU.vhd
+ghdl -a SelectorALU_NUM/SelectorALU_NUM.vhd
+ghdl -a SelectorTwoStack/SelectorTwoStack.vhd
+ghdl -a StackRegister/StackRegister.vhd
+
 ghdl -a Datapath.vhd
 pause
 

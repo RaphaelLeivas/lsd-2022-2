@@ -4,12 +4,14 @@ use IEEE.std_logic_1164.all;
 entity Datapath is
   port (
     clk : in std_logic;
-    enter_num, enter_opr, reset : in std_logic;
-    is_empty0, is_empty1, is_empty2 : in std_logic;
-    load_stack0, load_stack1, load_stack2 : out std_logic;
-    clear_stack0, clear_stack1, clear_stack2 : out std_logic;
-    select_alu_num : out std_logic;
-    select_stack_pos, select_two_stack_pos : out std_logic_vector(2 downto 0)
+    num : in std_logic_vector(3 downto 0);
+    opr : in std_logic_vector(1 downto 0);
+    sel_alu_num : in std_logic;
+    sel_two_stack_pos, sel_stack_pos : in std_logic_vector(2 downto 0);
+    clear_stack0, clear_stack1, clear_stack2, load_stack0, load_stack1, load_stack2 : in std_logic;
+
+    isEmpty_stack0, isEmpty_stack1, isEmpty_stack2 : out std_logic;
+    result_output : out std_logic_vector(3 downto 0)
   );
 end Datapath;
 
@@ -20,130 +22,99 @@ architecture arch_Datapath of Datapath is
   "000 001 010 011 100 101";
   signal PS, NS : state_type;
   signal Y : std_logic_vector(2 downto 0); -- signal para os proximos estados da FSM
+
+  -- signals internos do bloco datapath
+  signal stack2_in, stack1_in, stack0_in, stack2_out, stack1_out, stack0_out : std_logic_vector(3 downto 0);
+  signal alu_num1, alu_num2, result_alu : std_logic_vector(3 downto 0);
+
+  component ALU is
+    port (
+      OPERATOR : in std_logic_vector(1 downto 0);
+      NUM1, NUM2 : in std_logic_vector(3 downto 0);
+      RESULT : out std_logic_vector(3 downto 0)
+    );
+  end component;
+
+  component SelectorALU_NUM is
+    port (
+      X0, X1 : in std_logic_vector(3 downto 0);
+      sel0 : in std_logic;
+      sel1 : in std_logic_vector(2 downto 0);
+      Y0, Y1, Y2 : out std_logic_vector(3 downto 0)
+    );
+  end component;
+
+  component SelectorTwoStack is
+    port (
+      X0, X1, X2 : in std_logic_vector(3 downto 0);
+      sel : in std_logic_vector(2 downto 0);
+      Y0, Y1 : out std_logic_vector(3 downto 0)
+    );
+  end component;
+
+  component StackRegister is
+    port (
+      X : in std_logic_vector(3 downto 0);
+      load, clear, clk : in std_logic;
+      isEmpty : out std_logic;
+      Z : out std_logic_vector(3 downto 0)
+    );
+  end component;
+
 begin
-  sync_process : process (clk, NS)
-  begin
-    if (rising_edge(clk)) then
-      PS <= NS;
-    end if;
-  end process sync_process;
+  inputSelector : SelectorALU_NUM port map(
+    X0 => result_alu,
+    X1 => num,
+    sel0 => sel_alu_num,
+    sel1 => sel_stack_pos,
+    Y0 => stack0_in,
+    Y1 => stack1_in,
+    Y2 => stack2_in
+  );
 
-  comb_process : process (
-    PS, 
-    reset,
-    enter_num,
-    enter_opr,
-    reset,
-    is_empty0,
-    is_empty1,
-    is_empty2
-  )
-  begin
-    -- pre-assign saidas, assim nao precisa definir todas em cada estado
-    load_stack0 <= '0';
-    load_stack1 <= '0';
-    load_stack2 <= '0';
+  stack0 : StackRegister port map(
+    clk => clk,
+    X => stack0_in,
+    load => load_stack0,
+    clear => clear_stack0,
+    isEmpty => isEmpty_stack0,
+    Z => stack0_out
+  );
 
-    clear_stack0 <= '0';
-    clear_stack1 <= '0';
-    clear_stack2 <= '0';
+  stack1 : StackRegister port map(
+    clk => clk,
+    X => stack1_in,
+    load => load_stack1,
+    clear => clear_stack1,
+    isEmpty => isEmpty_stack1,
+    Z => stack1_out
+  );
 
-    select_alu_num <= '1'; -- seleciona das chaves default
-    select_stack_pos <= "100";
-    select_two_stack_pos <= "110";
+  stack2 : StackRegister port map(
+    clk => clk,
+    X => stack2_in,
+    load => load_stack2,
+    clear => clear_stack2,
+    isEmpty => isEmpty_stack2,
+    Z => stack2_out
+  );
 
-    case PS is
-      when RESET_BOOT =>
-        if (reset = '1') then
-          NS <= RESET_BOOT;
-        else
-          NS <= WAIT_ENTER;
-        end if;
+  outputSelector : SelectorTwoStack port map(
+    X0 => stack0_out,
+    X1 => stack1_out,
+    X2 => stack2_out,
+    sel => sel_two_stack_pos,
+    Y0 => alu_num1,
+    Y1 => alu_num2
+  );
 
-        clear_stack0 <= '1';
-        clear_stack1 <= '1';
-        clear_stack2 <= '1';
+  stackALU : ALU port map(
+    OPERATOR => opr,
+    NUM1 => alu_num1, 
+    NUM2 => alu_num2,
+    RESULT => result_alu
+  );
 
-      when WAIT_ENTER =>
-        if (reset = '1') then
-          NS <= RESET_BOOT;
-        elsif (enter_num = '1') then
-          NS <= UPDATE_NUM;
-        elsif (enter_opr = '1') then
-          NS <= EXECUTE_OPERATION;
-        else
-          NS <= WAIT_ENTER;
-        end if;
+  result_output <= alu_num1;
 
-      when UPDATE_NUM =>
-        NS <= WAIT_ENTER_NUM_DOWN;
-        select_alu_num <= '1'; -- puxa do num conectado das chaves
-
-        -- identifica a posicao da stack que precisa carregar o conteudo das chaves
-        -- e sempre a mais alta que a stack permite
-        -- se todas as posicoes estao cheias, nao faz nada (nao adiciona na stack)
-        if (is_empty0 = '1') then
-          select_stack_pos <= "001";
-          select_two_stack_pos <= "011";
-          load_stack0 <= '1';
-        elsif (is_empty1 = '1') then
-          select_stack_pos <= "010";
-          select_two_stack_pos <= "011";
-          load_stack1 <= '1';
-        elsif (is_empty2 = '1') then
-          select_stack_pos <= "100";
-          select_two_stack_pos <= "110";
-          load_stack2 <= '1';
-        end if;
-
-      when WAIT_ENTER_NUM_DOWN =>
-        if (enter_num = '1') then
-          NS <= WAIT_ENTER_NUM_DOWN;
-        else
-          NS <= WAIT_ENTER;
-        end if;
-
-      when EXECUTE_OPERATION =>
-        NS <= WAIT_ENTER_OPR_DOWN;
-        select_alu_num <= '0'; -- puxa da ALU do datapath
-
-        -- identifica a posicao da stack que precisa carregar o conteudo das chaves
-        -- e sempre a mais alta que a stack permite
-        -- se todas as posicoes estao cheias, nao faz nada (nao adiciona na stack)
-        if (is_empty0 = '1') then
-          select_stack_pos <= "001";
-          select_two_stack_pos <= "011";
-          load_stack0 <= '1';
-        elsif (is_empty1 = '1') then
-          select_stack_pos <= "010";
-          select_two_stack_pos <= "011";
-          load_stack1 <= '1';
-        elsif (is_empty2 = '1') then
-          select_stack_pos <= "100";
-          select_two_stack_pos <= "110";
-          load_stack2 <= '1';
-        end if;
-
-      when WAIT_ENTER_OPR_DOWN =>
-        if (enter_opr = '1') then
-          NS <= WAIT_ENTER_OPR_DOWN;
-        else
-          NS <= WAIT_ENTER;
-        end if;
-        
-      when others => -- catch all, nunca deve chegar aqui
-        NS <= RESET_BOOT;
-    end case;
-end process comb_process;
-
--- codificação dos estados Y
-with PS select
-  Y <=
-    "000" when RESET_BOOT,
-    "001" when WAIT_ENTER,
-    "010" when UPDATE_NUM,
-    "011" when WAIT_ENTER_NUM_DOWN,
-    "100" when EXECUTE_OPERATION,
-    "101" when WAIT_ENTER_OPR_DOWN,
-    "000" when others;
 end arch_Datapath;

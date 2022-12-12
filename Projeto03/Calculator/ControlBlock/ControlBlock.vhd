@@ -124,6 +124,8 @@ begin
           load_stack2 <= '1';
         end if;
 
+        -- onde e feito aqui o clear dos dois mais altos da stack?
+
       when WAIT_ENTER_OPR_DOWN =>
         if (enter_opr = '1') then
           NS <= WAIT_ENTER_OPR_DOWN;
