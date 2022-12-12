@@ -1,0 +1,58 @@
+$date
+  Sun Dec 11 22:31:05 2022
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module tb_stackregister $end
+$var reg 4 ! tb_x[3:0] $end
+$var reg 1 " tb_load $end
+$var reg 1 # tb_clear $end
+$var reg 1 $ tb_isempty $end
+$var reg 4 % tb_y[3:0] $end
+$scope module dut $end
+$var reg 4 & x[3:0] $end
+$var reg 1 ' load $end
+$var reg 1 ( clear $end
+$var reg 1 ) isempty $end
+$var reg 4 * y[3:0] $end
+$var reg 4 + y_interm[3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b1101 !
+0"
+1#
+1$
+b0000 %
+b1101 &
+0'
+1(
+1)
+b0000 *
+b0000 +
+#2000000
+0#
+0$
+0(
+0)
+#20000000
+b0010 !
+b0010 &
+#22000000
+1"
+b0010 %
+1'
+b0010 *
+b0010 +
+#40000000
