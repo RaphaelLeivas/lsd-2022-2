@@ -1,7 +1,7 @@
 v 4
-file . "tb_SelectorALU_NUM.vhd" "98d27b2b43e1bca09342079ec40a8aa0c93d77fd" "20221212010454.170":
-  entity tb_selectoralu_num at 1( 0) + 0 on 211;
-  architecture arch_tb_selectoralu_num of tb_selectoralu_num at 7( 104) + 0 on 212;
+file . "tb_SelectorALU_NUM.vhd" "e1cda76e3c6c6ad40ef601ff27bba724c797dc33" "20221212172827.835":
+  entity tb_selectoralu_num at 1( 0) + 0 on 219;
+  architecture arch_tb_selectoralu_num of tb_selectoralu_num at 7( 104) + 0 on 220;
 file . "tb_ALU.vhd" "2a192c77c06825977ef506ecdea131d2811cc021" "20221212004606.704":
   entity tb_alu at 1( 0) + 0 on 187;
   architecture arch_tb_alu of tb_alu at 7( 80) + 0 on 188;
@@ -20,6 +20,6 @@ file . "tb_ClockDivider.vhd" "374d4d3a9d06c697a00784574bca600ecda2d48c" "2022112
 file . "ALU.vhd" "a18bf39559eee4d498aeb27a90bce9de390b6d95" "20221212004606.194":
   entity alu at 2( 2) + 0 on 185;
   architecture arch_alu of alu at 14( 268) + 0 on 186;
-file . "SelectorALU_NUM.vhd" "f07cf30a8746b6b677bc595d3227b9e4bbd7cab4" "20221212010453.820":
-  entity selectoralu_num at 2( 2) + 0 on 209;
-  architecture arch_selectoralu_num of selectoralu_num at 15( 312) + 0 on 210;
+file . "SelectorALU_NUM.vhd" "f07cf30a8746b6b677bc595d3227b9e4bbd7cab4" "20221212172827.335":
+  entity selectoralu_num at 2( 2) + 0 on 217;
+  architecture arch_selectoralu_num of selectoralu_num at 15( 312) + 0 on 218;

@@ -12,14 +12,19 @@ entity ALU is
 end ALU;
 
 architecture arch_ALU of ALU is
-  signal RESULT_INTERM : std_logic_vector(3 downto 0);
 begin
-  RESULT_INTERM <=
-    std_logic_vector(unsigned(NUM1) + unsigned(NUM2)) when OPERATOR = "00" else
-    std_logic_vector(unsigned(NUM1) - unsigned(NUM2)) when OPERATOR = "01" else
-    std_logic_vector(shift_left(unsigned(NUM1), to_integer(unsigned(NUM2)))) when OPERATOR = "10" else
-    std_logic_vector(shift_right(unsigned(NUM1), to_integer(unsigned(NUM2)))) when OPERATOR = "11" else
-    RESULT_INTERM;
-
-  RESULT <= RESULT_INTERM;
+  operationProcess : process (OPERATOR, NUM1, NUM2)
+  begin
+    case (OPERATOR) is
+      when "00" =>
+        RESULT <= std_logic_vector(unsigned(NUM1) + unsigned(NUM2));      
+      when "01" =>
+        RESULT <= std_logic_vector(unsigned(NUM1) - unsigned(NUM2));      
+      when "10" =>
+        RESULT <= std_logic_vector(shift_left(unsigned(NUM1), to_integer(unsigned(NUM2)))); 
+      when "11" =>
+        RESULT <= std_logic_vector(shift_right(unsigned(NUM1), to_integer(unsigned(NUM2))));
+      when others => RESULT <= "0000";
+    end case;
+  end process operationProcess;
 end arch_ALU;

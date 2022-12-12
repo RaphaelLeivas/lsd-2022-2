@@ -115,6 +115,6 @@ begin
     RESULT => result_alu
   );
 
-  result_output <= alu_num1;
+  result_output <= alu_num2;
 
 end arch_Datapath;

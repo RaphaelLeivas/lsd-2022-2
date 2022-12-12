@@ -14,8 +14,10 @@ end SelectorTwoStack;
 architecture arch_SelectorTwoStack of SelectorTwoStack is
 begin
   Y1 <= X2 when sel = "110" else
-    X1 when sel = "011";
+    X1 when sel = "011" else 
+    X0 when sel = "001";
   Y0 <= X1 when sel = "110" else
-    X0 when sel = "011";
+    X0 when sel = "011" else
+    "0000" when sel = "001";
 
 end arch_SelectorTwoStack;

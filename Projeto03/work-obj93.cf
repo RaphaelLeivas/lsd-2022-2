@@ -1,19 +1,19 @@
 v 4
-file . "Calculator/Datapath/Datapath.vhd" "fde81e5dce18440db362aa90ed116a7141633b11" "20221212141639.147":
-  entity datapath at 1( 0) + 0 on 391;
-  architecture arch_datapath of datapath at 18( 545) + 0 on 392;
-file . "Calculator/Datapath/SelectorTwoStack/SelectorTwoStack.vhd" "0c1c45ac0dd7c137ca7165ab744f7cd046d5934f" "20221212141639.087":
-  entity selectortwostack at 2( 2) + 0 on 387;
-  architecture arch_selectortwostack of selectortwostack at 14( 287) + 0 on 388;
-file . "Calculator/Datapath/ALU/ALU.vhd" "a18bf39559eee4d498aeb27a90bce9de390b6d95" "20221212141639.026":
-  entity alu at 2( 2) + 0 on 383;
-  architecture arch_alu of alu at 14( 268) + 0 on 384;
-file . "Projeto03.vhd" "4ec598448c6adf6baa6345a53c5ac761f49e8005" "20221212141639.275":
-  entity projeto03 at 1( 0) + 0 on 399;
-  architecture arch_projeto03 of projeto03 at 16( 422) + 0 on 400;
-file . "ClockDivider/ClockDivider.vhd" "aa2e3c06d2dfbfcd23e43bb30192d6c973b605c2" "20221212141639.212":
-  entity clockdivider at 4( 103) + 0 on 395;
-  architecture arch_clockdivider of clockdivider at 19( 435) + 0 on 396;
+file . "Calculator/Datapath/Datapath.vhd" "fbf19124a6cd4729fcdeaae1393191624dd0823d" "20221212173612.998":
+  entity datapath at 1( 0) + 0 on 411;
+  architecture arch_datapath of datapath at 18( 545) + 0 on 412;
+file . "Calculator/Datapath/SelectorTwoStack/SelectorTwoStack.vhd" "e2cb4b17fb205049fa6a4b6e98074a78d5d52e12" "20221212173612.935":
+  entity selectortwostack at 2( 2) + 0 on 407;
+  architecture arch_selectortwostack of selectortwostack at 14( 287) + 0 on 408;
+file . "Calculator/Datapath/ALU/ALU.vhd" "10f7cee00e390c0d98a33d7619b96bdd07cf548c" "20221212173612.872":
+  entity alu at 2( 2) + 0 on 403;
+  architecture arch_alu of alu at 14( 268) + 0 on 404;
+file . "Projeto03.vhd" "4ec598448c6adf6baa6345a53c5ac761f49e8005" "20221212173613.133":
+  entity projeto03 at 1( 0) + 0 on 419;
+  architecture arch_projeto03 of projeto03 at 16( 422) + 0 on 420;
+file . "ClockDivider/ClockDivider.vhd" "aa2e3c06d2dfbfcd23e43bb30192d6c973b605c2" "20221212173613.070":
+  entity clockdivider at 4( 103) + 0 on 415;
+  architecture arch_clockdivider of clockdivider at 19( 435) + 0 on 416;
 file . "Projeto02.vhd" "61b2bd78b1942ce87f3534d15df970be141b17a6" "20221127220425.578":
   entity projeto02 at 1( 0) + 0 on 261;
   architecture arch_projeto02 of projeto02 at 13( 246) + 0 on 262;
@@ -44,18 +44,18 @@ file . "tb_Projeto02.vhd" "7e4596e959e55e8a62ca07eb3fe5c50eba7f98e1" "2022112722
 file . "FSM/FSM.vhd" "301c6b49c97480fdd1107f4f5db4380bcacc1503" "20221206181144.412":
   entity fsm at 1( 0) + 0 on 279;
   architecture arch_fsm of fsm at 11( 241) + 0 on 280;
-file . "tb_Projeto03.vhd" "71df679b013485786385d7af4790f38bb0ab3d18" "20221212141639.310":
-  entity tb_projeto03 at 1( 0) + 0 on 401;
-  architecture arch_tb_projeto03 of tb_projeto03 at 8( 119) + 0 on 402;
-file . "Calculator/Calculator.vhd" "01ab1b750f95ef4fd2adfa19f159f882c177f0d6" "20221212141639.245":
-  entity calculator at 1( 0) + 0 on 397;
-  architecture arch_calculator of calculator at 14( 389) + 0 on 398;
-file . "Calculator/Datapath/SelectorALU_NUM/SelectorALU_NUM.vhd" "f07cf30a8746b6b677bc595d3227b9e4bbd7cab4" "20221212141639.060":
-  entity selectoralu_num at 2( 2) + 0 on 385;
-  architecture arch_selectoralu_num of selectoralu_num at 15( 312) + 0 on 386;
-file . "Calculator/Datapath/StackRegister/StackRegister.vhd" "8289a85055c8b4d19112dd3dad24f4d7f01836da" "20221212141639.116":
-  entity stackregister at 3( 47) + 0 on 389;
-  architecture arch_stackregister of stackregister at 15( 309) + 0 on 390;
-file . "Calculator/ControlBlock/ControlBlock.vhd" "8b39466c2e398630c20c7c4de6caeec443575be0" "20221212141639.179":
-  entity controlblock at 1( 0) + 0 on 393;
-  architecture arch_controlblock of controlblock at 16( 474) + 0 on 394;
+file . "tb_Projeto03.vhd" "71df679b013485786385d7af4790f38bb0ab3d18" "20221212173613.166":
+  entity tb_projeto03 at 1( 0) + 0 on 421;
+  architecture arch_tb_projeto03 of tb_projeto03 at 8( 119) + 0 on 422;
+file . "Calculator/Calculator.vhd" "01ab1b750f95ef4fd2adfa19f159f882c177f0d6" "20221212173613.095":
+  entity calculator at 1( 0) + 0 on 417;
+  architecture arch_calculator of calculator at 14( 389) + 0 on 418;
+file . "Calculator/Datapath/SelectorALU_NUM/SelectorALU_NUM.vhd" "f07cf30a8746b6b677bc595d3227b9e4bbd7cab4" "20221212173612.903":
+  entity selectoralu_num at 2( 2) + 0 on 405;
+  architecture arch_selectoralu_num of selectoralu_num at 15( 312) + 0 on 406;
+file . "Calculator/Datapath/StackRegister/StackRegister.vhd" "8289a85055c8b4d19112dd3dad24f4d7f01836da" "20221212173612.967":
+  entity stackregister at 3( 47) + 0 on 409;
+  architecture arch_stackregister of stackregister at 15( 309) + 0 on 410;
+file . "Calculator/ControlBlock/ControlBlock.vhd" "02f77175d5d0efa027f4476067c2057971bc58c6" "20221212173613.030":
+  entity controlblock at 1( 0) + 0 on 413;
+  architecture arch_controlblock of controlblock at 16( 474) + 0 on 414;

@@ -30,8 +30,8 @@ begin
     Y2 => tb_Y2
   );
 
-  tb_X0 <= "1101", "0010" after 20 ns, "0010" after 40 ns;
-  tb_X1 <= "1111", "0001" after 20 ns, "0001" after 40 ns;
-  tb_sel0 <= '0', '0' after 20 ns, '1' after 40 ns, '0' after 60 ns;
+  tb_X0 <= "1101", "0010" after 20 ns, "0010" after 40 ns, "0010" after 80 ns;
+  tb_X1 <= "1111", "0001" after 20 ns, "0001" after 40 ns, "1100" after 80 ns;
+  tb_sel0 <= '0', '0' after 20 ns, '1' after 40 ns, '0' after 60 ns, '0' after 100 ns;
   tb_sel1 <= "001", "100" after 20 ns, "010" after 40 ns, "010" after 60 ns;
 end arch_tb_SelectorALU_NUM;

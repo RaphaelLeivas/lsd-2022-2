@@ -48,10 +48,6 @@ begin
     clear_stack1 <= '0';
     clear_stack2 <= '0';
 
-    select_alu_num <= '1'; -- seleciona das chaves default
-    select_stack_pos <= "100";
-    select_two_stack_pos <= "110";
-
     case PS is
       when RESET_BOOT =>
         if (reset = '1') then
@@ -77,14 +73,14 @@ begin
 
       when UPDATE_NUM =>
         NS <= WAIT_ENTER_NUM_DOWN;
-        select_alu_num <= '1'; -- puxa do num conectado das chaves
+        select_alu_num <= '1'; -- puxa do num conectado nas chaves
 
         -- identifica a posicao da stack que precisa carregar o conteudo das chaves
         -- e sempre a mais alta que a stack permite
         -- se todas as posicoes estao cheias, nao faz nada (nao adiciona na stack)
         if (is_empty0 = '1') then
           select_stack_pos <= "001";
-          select_two_stack_pos <= "011";
+          select_two_stack_pos <= "001";
           load_stack0 <= '1';
         elsif (is_empty1 = '1') then
           select_stack_pos <= "010";
@@ -106,13 +102,14 @@ begin
       when EXECUTE_OPERATION =>
         NS <= WAIT_ENTER_OPR_DOWN;
         select_alu_num <= '0'; -- puxa da ALU do datapath
+        -- a linha acima está dando pau no testbench (simlation stopped). Se atribuir '1' resolve
 
         -- identifica a posicao da stack que precisa carregar o conteudo das chaves
         -- e sempre a mais alta que a stack permite
         -- se todas as posicoes estao cheias, nao faz nada (nao adiciona na stack)
         if (is_empty0 = '1') then
           select_stack_pos <= "001";
-          select_two_stack_pos <= "011";
+          select_two_stack_pos <= "001";
           load_stack0 <= '1';
         elsif (is_empty1 = '1') then
           select_stack_pos <= "010";

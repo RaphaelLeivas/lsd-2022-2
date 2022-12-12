@@ -49,15 +49,32 @@ begin
   stimulus : process
   begin
     tb_RST <= '0';
+    tb_ENTER_NUM <= '0';
+    tb_ENTER_OPR<= '0';
+
+    tb_NUM <= "0010";
+    tb_OPR <= "00";
+    wait for 5 * PERIODO;
+
     tb_ENTER_NUM <= '1';
     wait for 5 * PERIODO;
+
     tb_ENTER_NUM <= '0';
     wait for 5 * PERIODO;
+
+    tb_NUM <= "0011";
+    wait for 5 * PERIODO;
+
     tb_ENTER_NUM <= '1';
-    wait for 25 * PERIODO;
-    tb_RST <= '1';
-    wait for 10 * PERIODO;
-    tb_RST <= '0';
+    wait for 5 * PERIODO;
+
+    tb_ENTER_NUM <= '0';
+    wait for 5 * PERIODO;
+
+    tb_ENTER_OPR <= '1';
+    wait for 5 * PERIODO;
+    tb_ENTER_OPR <= '0';
+    wait for 5 * PERIODO;
 
     wait;
   end process stimulus;

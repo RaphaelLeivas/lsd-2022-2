@@ -1,16 +1,16 @@
 v 4
-file . "ControlBlock/ControlBlock.vhd" "8b39466c2e398630c20c7c4de6caeec443575be0" "20221212135346.180":
-  entity controlblock at 1( 0) + 0 on 221;
-  architecture arch_controlblock of controlblock at 16( 474) + 0 on 222;
-file . "Datapath/StackRegister/StackRegister.vhd" "8289a85055c8b4d19112dd3dad24f4d7f01836da" "20221212135346.126":
-  entity stackregister at 3( 47) + 0 on 217;
-  architecture arch_stackregister of stackregister at 15( 309) + 0 on 218;
-file . "Datapath/SelectorALU_NUM/SelectorALU_NUM.vhd" "f07cf30a8746b6b677bc595d3227b9e4bbd7cab4" "20221212135346.075":
-  entity selectoralu_num at 2( 2) + 0 on 213;
-  architecture arch_selectoralu_num of selectoralu_num at 15( 312) + 0 on 214;
-file . "tb_Calculator.vhd" "8a3a088c309f331cdb5fe8b02f8fa8a9e07a695e" "20221212135350.025":
-  entity tb_calculator at 1( 0) + 0 on 225;
-  architecture arch_tb_calculator of tb_calculator at 8( 121) + 0 on 226;
+file . "ControlBlock/ControlBlock.vhd" "ecc9c7e50324a63522aae652b6e02d7c519225aa" "20221212173516.765":
+  entity controlblock at 1( 0) + 0 on 669;
+  architecture arch_controlblock of controlblock at 16( 474) + 0 on 670;
+file . "Datapath/StackRegister/StackRegister.vhd" "8289a85055c8b4d19112dd3dad24f4d7f01836da" "20221212173516.699":
+  entity stackregister at 3( 47) + 0 on 665;
+  architecture arch_stackregister of stackregister at 15( 309) + 0 on 666;
+file . "Datapath/SelectorALU_NUM/SelectorALU_NUM.vhd" "f07cf30a8746b6b677bc595d3227b9e4bbd7cab4" "20221212173516.643":
+  entity selectoralu_num at 2( 2) + 0 on 661;
+  architecture arch_selectoralu_num of selectoralu_num at 15( 312) + 0 on 662;
+file . "tb_Calculator.vhd" "1d5bf4ca69afae25ff2bdefaf09b53586eb02742" "20221212173516.827":
+  entity tb_calculator at 1( 0) + 0 on 673;
+  architecture arch_tb_calculator of tb_calculator at 8( 121) + 0 on 674;
 file . "FSM.vhd" "dca8c011028169e3ffd8e142061479ee0f7d63f8" "20221127214827.633":
   entity fsm at 1( 0) + 0 on 171;
   architecture arch_fsm of fsm at 11( 241) + 0 on 172;
@@ -41,15 +41,15 @@ file . "tb_ComponentEx8.vhd" "bde785f83410c70e98fa600a54a2c5bc33e80fc3" "2022102
 file . "tb_FSM.vhd" "9b73a1a16dea993b9b20b43527cb9981d0cb4824" "20221127214828.023":
   entity tb_fsm at 1( 0) + 0 on 173;
   architecture arch_tb_fsm of tb_fsm at 8( 107) + 0 on 174;
-file . "Calculator.vhd" "e3b93e36dcaa98166e9ce334e2a91d171372a991" "20221212135346.207":
-  entity calculator at 1( 0) + 0 on 223;
-  architecture arch_calculator of calculator at 14( 388) + 0 on 224;
-file . "Datapath/ALU/ALU.vhd" "a18bf39559eee4d498aeb27a90bce9de390b6d95" "20221212135346.047":
-  entity alu at 2( 2) + 0 on 211;
-  architecture arch_alu of alu at 14( 268) + 0 on 212;
-file . "Datapath/SelectorTwoStack/SelectorTwoStack.vhd" "0c1c45ac0dd7c137ca7165ab744f7cd046d5934f" "20221212135346.101":
-  entity selectortwostack at 2( 2) + 0 on 215;
-  architecture arch_selectortwostack of selectortwostack at 14( 287) + 0 on 216;
-file . "Datapath/Datapath.vhd" "fde81e5dce18440db362aa90ed116a7141633b11" "20221212135346.153":
-  entity datapath at 1( 0) + 0 on 219;
-  architecture arch_datapath of datapath at 18( 545) + 0 on 220;
+file . "Calculator.vhd" "01ab1b750f95ef4fd2adfa19f159f882c177f0d6" "20221212173516.795":
+  entity calculator at 1( 0) + 0 on 671;
+  architecture arch_calculator of calculator at 14( 389) + 0 on 672;
+file . "Datapath/ALU/ALU.vhd" "10f7cee00e390c0d98a33d7619b96bdd07cf548c" "20221212173516.613":
+  entity alu at 2( 2) + 0 on 659;
+  architecture arch_alu of alu at 14( 268) + 0 on 660;
+file . "Datapath/SelectorTwoStack/SelectorTwoStack.vhd" "e2cb4b17fb205049fa6a4b6e98074a78d5d52e12" "20221212173516.673":
+  entity selectortwostack at 2( 2) + 0 on 663;
+  architecture arch_selectortwostack of selectortwostack at 14( 287) + 0 on 664;
+file . "Datapath/Datapath.vhd" "fbf19124a6cd4729fcdeaae1393191624dd0823d" "20221212173516.734":
+  entity datapath at 1( 0) + 0 on 667;
+  architecture arch_datapath of datapath at 18( 545) + 0 on 668;
