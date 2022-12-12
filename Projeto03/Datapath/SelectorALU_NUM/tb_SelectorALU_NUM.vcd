@@ -1,0 +1,70 @@
+$date
+  Sun Dec 11 22:04:54 2022
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module tb_selectoralu_num $end
+$var reg 4 ! tb_x0[3:0] $end
+$var reg 4 " tb_x1[3:0] $end
+$var reg 1 # tb_sel0 $end
+$var reg 3 $ tb_sel1[2:0] $end
+$var reg 4 % tb_y0[3:0] $end
+$var reg 4 & tb_y1[3:0] $end
+$var reg 4 ' tb_y2[3:0] $end
+$scope module dut $end
+$var reg 4 ( x0[3:0] $end
+$var reg 4 ) x1[3:0] $end
+$var reg 1 * sel0 $end
+$var reg 3 + sel1[2:0] $end
+$var reg 4 , y0[3:0] $end
+$var reg 4 - y1[3:0] $end
+$var reg 4 . y2[3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b1101 !
+b1111 "
+0#
+b001 $
+b1101 %
+bUUUU &
+bUUUU '
+b1101 (
+b1111 )
+0*
+b001 +
+b1101 ,
+bUUUU -
+bUUUU .
+#20000000
+b0010 !
+b0001 "
+b100 $
+b0010 '
+b0010 (
+b0001 )
+b100 +
+b0010 .
+#40000000
+1#
+b010 $
+b0001 &
+1*
+b010 +
+b0001 -
+#60000000
+0#
+b0010 &
+0*
+b0010 -

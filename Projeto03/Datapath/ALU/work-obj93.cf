@@ -1,7 +1,7 @@
 v 4
-file . "tb_ALU.vhd" "2a192c77c06825977ef506ecdea131d2811cc021" "20221211234441.651":
-  entity tb_alu at 1( 0) + 0 on 183;
-  architecture arch_tb_alu of tb_alu at 7( 80) + 0 on 184;
+file . "tb_ALU.vhd" "2a192c77c06825977ef506ecdea131d2811cc021" "20221212004606.704":
+  entity tb_alu at 1( 0) + 0 on 187;
+  architecture arch_tb_alu of tb_alu at 7( 80) + 0 on 188;
 file . "ClockDivider.vhd" "aa2e3c06d2dfbfcd23e43bb30192d6c973b605c2" "20221127195743.988":
   entity clockdivider at 4( 103) + 0 on 121;
   architecture arch_clockdivider of clockdivider at 19( 435) + 0 on 122;
@@ -14,6 +14,6 @@ file . "tb_Decoder3x8.vhd" "7f21a4a2369ff5ebdefbca6cf2485954bba3c27b" "202210260
 file . "tb_ClockDivider.vhd" "374d4d3a9d06c697a00784574bca600ecda2d48c" "20221127195744.234":
   entity tb_clockdivider at 1( 0) + 0 on 123;
   architecture arch_tb_clockdivider of tb_clockdivider at 8( 125) + 0 on 124;
-file . "ALU.vhd" "a18bf39559eee4d498aeb27a90bce9de390b6d95" "20221211234441.147":
-  entity alu at 2( 2) + 0 on 181;
-  architecture arch_alu of alu at 14( 268) + 0 on 182;
+file . "ALU.vhd" "a18bf39559eee4d498aeb27a90bce9de390b6d95" "20221212004606.194":
+  entity alu at 2( 2) + 0 on 185;
+  architecture arch_alu of alu at 14( 268) + 0 on 186;
