@@ -7,63 +7,92 @@ entity Calculator is
     RST, ENTER_NUM, ENTER_OPR : in std_logic;
     NUM : in std_logic_vector(3 downto 0);
     OPR : in std_logic_vector(1 downto 0);
-    Z0, Z1, Z2, Z3 : out std_logic_vector(0 to 7));
+    -- Z0, Z1, Z2, Z3 : out std_logic_vector(0 to 7));
+    Z0 : out std_logic_vector(0 to 3)); -- para teste no projeto reduzido
 end Calculator;
 
 architecture arch_Calculator of Calculator is
-  type state_type is (RESET, WAIT_ENTER, SAVE_NUM);
-  attribute ENUM_ENCODING : string;
-  attribute ENUM_ENCODING of state_type : type is
-  "000 001 010";
-  signal PS, NS : state_type;
-  signal Y : std_logic_vector(2 downto 0); -- signal para os proximos estados da FSM
-  signal STACK_ENABLE : std_logic;
+  component ControlBlock is
+    port (
+      clk : in std_logic;
+      enter_num, enter_opr, reset : in std_logic;
+      is_empty0, is_empty1, is_empty2 : in std_logic;
+      load_stack0, load_stack1, load_stack2 : out std_logic;
+      clear_stack0, clear_stack1, clear_stack2 : out std_logic;
+      select_alu_num : out std_logic;
+      select_stack_pos, select_two_stack_pos : out std_logic_vector(2 downto 0)
+    );
+  end component;
+
+  component Datapath is
+    port (
+      clk : in std_logic;
+      num : in std_logic_vector(3 downto 0);
+      opr : in std_logic_vector(1 downto 0);
+      sel_alu_num : in std_logic;
+      sel_two_stack_pos, sel_stack_pos : in std_logic_vector(2 downto 0);
+      clear_stack0, clear_stack1, clear_stack2, load_stack0, load_stack1, load_stack2 : in std_logic;
+  
+      isEmpty_stack0, isEmpty_stack1, isEmpty_stack2 : out std_logic;
+      result_output : out std_logic_vector(3 downto 0)
+    );
+  end component;
+
+  -- signals intermediarios (conexao entre os blocos)
+  signal interm_is_empty0 : std_logic;
+  signal interm_is_empty1 : std_logic;
+  signal interm_is_empty2 : std_logic;
+  signal interm_load_stack0 : std_logic;
+  signal interm_load_stack1 : std_logic;
+  signal interm_load_stack2 : std_logic;
+  signal interm_clear_stack0 : std_logic;
+  signal interm_clear_stack1 : std_logic;
+  signal interm_clear_stack2 : std_logic;
+  signal interm_select_alu_num : std_logic;
+  signal interm_select_stack_pos : std_logic_vector(2 downto 0);
+  signal interm_select_two_stack_pos  : std_logic_vector(2 downto 0);
+
 begin
-  sync_process : process (CLK, NS)
-  begin
-    if (rising_edge(CLK)) then
-      PS <= NS;
-    end if;
-  end process sync_process;
+  blocoDeControle : ControlBlock port map(
+    clk => CLK,
+    enter_num => ENTER_NUM,
+    enter_opr => ENTER_OPR,
+    reset => RST,
 
-  comb_process : process (PS)
-  begin
-    -- pre-assign saidas, assim nao precisa definir todas em cada estado
-    Z0 <= "11111111";
-    Z1 <= "11111111";
-    Z2 <= "11111111";
-    Z3 <= "11111111";
+    is_empty0 => interm_is_empty0,
+    is_empty1 => interm_is_empty1,
+    is_empty2 => interm_is_empty2,
+    load_stack0 => interm_load_stack0,
+    load_stack1 => interm_load_stack1,
+    load_stack2 => interm_load_stack2,
+    clear_stack0 => interm_clear_stack0,
+    clear_stack1 => interm_clear_stack1,
+    clear_stack2 => interm_clear_stack2,
+    select_alu_num => interm_select_alu_num,
+    select_stack_pos => interm_select_stack_pos,
+    select_two_stack_pos => interm_select_two_stack_pos
+  );
 
-    case PS is
-      when RESET =>
-        NS <= WAIT_ENTER;
+  blocoOperacional : Datapath port map(
+    clk => CLK,
+    num => NUM,
+    opr => OPR,
+    result_output => Z0,
 
-      when WAIT_ENTER =>
-        if (RST = '1') then
-          NS <= RESET;
-        end if;
+    sel_alu_num => interm_select_alu_num,
+    sel_stack_pos => interm_select_stack_pos,
+    sel_two_stack_pos => interm_select_two_stack_pos,
+    clear_stack0 => interm_clear_stack0,
+    clear_stack1 => interm_clear_stack1,
+    clear_stack2 => interm_clear_stack2,
+    load_stack0 => interm_load_stack0,
+    load_stack1 => interm_load_stack1,
+    load_stack2 => interm_load_stack2,
 
-        if (ENTER_NUM = '1') then
-          NS <= SAVE_NUM;
-        else 
-          NS <= WAIT_ENTER;
-        end if;
+    isEmpty_stack0 => interm_is_empty0,
+    isEmpty_stack1 => interm_is_empty1,
+    isEmpty_stack2 => interm_is_empty2
+  );
 
-        STACK_ENABLE <= '0';
 
-      when SAVE_NUM =>
-        NS <= WAIT_ENTER;
-
-      when others => -- catch all, nunca deve chegar aqui
-        NS <= WAIT_ENTER;
-    end case;
-end process comb_process;
-
--- codificação dos estados Y
-with PS select
-  Y <=
-  "000" when RESET,
-  "001" when WAIT_ENTER,
-  "010" when SAVE_NUM,
-  "000" when others;
 end arch_Calculator;

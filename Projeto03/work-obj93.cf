@@ -1,43 +1,61 @@
 v 4
-file . "Calculator/Calculator.vhd" "aa9cdc509d3a1e3a8031aa8fa6f2078ed953ab06" "20221209124512.077":
-  entity calculator at 1( 0) + 0 on 319;
-  architecture arch_calculator of calculator at 13( 317) + 0 on 320;
-file . "tb_Projeto03.vhd" "235007a24d245d7b54db5e5c17b8f7bbcdabd51a" "20221209124512.776":
-  entity tb_projeto03 at 1( 0) + 0 on 323;
-  architecture arch_tb_projeto03 of tb_projeto03 at 8( 119) + 0 on 324;
-file . "FSM/FSM.vhd" "301c6b49c97480fdd1107f4f5db4380bcacc1503" "20221206181144.412":
-  entity fsm at 1( 0) + 0 on 279;
-  architecture arch_fsm of fsm at 11( 241) + 0 on 280;
-file . "tb_Projeto02.vhd" "7e4596e959e55e8a62ca07eb3fe5c50eba7f98e1" "20221127220425.882":
-  entity tb_projeto02 at 1( 0) + 0 on 263;
-  architecture arch_tb_projeto02 of tb_projeto02 at 8( 119) + 0 on 264;
-file . "OR4x1/OR4x1.vhd" "f6e5f21ca0b38306ac9e0a89c839e94454b53eba" "20221123185147.199":
-  entity or4x1 at 4( 130) + 0 on 129;
-  architecture arch_or4x1 of or4x1 at 13( 297) + 0 on 130;
-file . "Decoder3x8/Decoder3x8.vhd" "be9da42bef55fffd22ad9832fffdaf974f1f1749" "20221123185146.648":
-  entity decoder3x8 at 4( 130) + 0 on 127;
-  architecture arch_decoder3x8 of decoder3x8 at 14( 356) + 0 on 128;
-file . "tb_Decoder3x8.vhd" "7f21a4a2369ff5ebdefbca6cf2485954bba3c27b" "20221026001505.874":
-  entity tb_decoder3x8 at 1( 0) + 0 on 51;
-  architecture arch_tb_decoder3x8 of tb_decoder3x8 at 7( 94) + 0 on 52;
-file . "tb_ComponentEx3.vhd" "d0eb5bc215bc005e8e6979de1f91ed804641f543" "20221104120649.893":
-  entity tb_componentex3 at 1( 0) + 0 on 107;
-  architecture arch_tb_componentex3 of tb_componentex3 at 8( 125) + 0 on 108;
-file . "tb_ComponentEx.vhd" "2800f57e640be38e76e4d32bcf35ac38a153b947" "20221017142003.687":
-  entity tb_componentex at 1( 0) + 0 on 23;
-  architecture arch_tb_componentex of tb_componentex at 8( 123) + 0 on 24;
-file . "ComponentEx.vhd" "20a7443db7969b963c3934a607f7f780ae1fd169" "20221017142003.659":
-  entity componentex at 4( 105) + 0 on 21;
-  architecture arch_componentex of componentex at 16( 367) + 0 on 22;
-file . "ComponentEx3.vhd" "802e406eaeff18e4593eaddef279e72bfe43dc93" "20221104120648.959":
-  entity componentex3 at 4( 115) + 0 on 105;
-  architecture arch_componentex3 of componentex3 at 16( 304) + 0 on 106;
+file . "Calculator/Datapath/Datapath.vhd" "fde81e5dce18440db362aa90ed116a7141633b11" "20221212141639.147":
+  entity datapath at 1( 0) + 0 on 391;
+  architecture arch_datapath of datapath at 18( 545) + 0 on 392;
+file . "Calculator/Datapath/SelectorTwoStack/SelectorTwoStack.vhd" "0c1c45ac0dd7c137ca7165ab744f7cd046d5934f" "20221212141639.087":
+  entity selectortwostack at 2( 2) + 0 on 387;
+  architecture arch_selectortwostack of selectortwostack at 14( 287) + 0 on 388;
+file . "Calculator/Datapath/ALU/ALU.vhd" "a18bf39559eee4d498aeb27a90bce9de390b6d95" "20221212141639.026":
+  entity alu at 2( 2) + 0 on 383;
+  architecture arch_alu of alu at 14( 268) + 0 on 384;
+file . "Projeto03.vhd" "4ec598448c6adf6baa6345a53c5ac761f49e8005" "20221212141639.275":
+  entity projeto03 at 1( 0) + 0 on 399;
+  architecture arch_projeto03 of projeto03 at 16( 422) + 0 on 400;
+file . "ClockDivider/ClockDivider.vhd" "aa2e3c06d2dfbfcd23e43bb30192d6c973b605c2" "20221212141639.212":
+  entity clockdivider at 4( 103) + 0 on 395;
+  architecture arch_clockdivider of clockdivider at 19( 435) + 0 on 396;
 file . "Projeto02.vhd" "61b2bd78b1942ce87f3534d15df970be141b17a6" "20221127220425.578":
   entity projeto02 at 1( 0) + 0 on 261;
   architecture arch_projeto02 of projeto02 at 13( 246) + 0 on 262;
-file . "ClockDivider/ClockDivider.vhd" "aa2e3c06d2dfbfcd23e43bb30192d6c973b605c2" "20221209124511.608":
-  entity clockdivider at 4( 103) + 0 on 317;
-  architecture arch_clockdivider of clockdivider at 19( 435) + 0 on 318;
-file . "Projeto03.vhd" "a836ca6e2e622b6661db57307b7478a0163659c5" "20221209124512.464":
-  entity projeto03 at 1( 0) + 0 on 321;
-  architecture arch_projeto03 of projeto03 at 13( 246) + 0 on 322;
+file . "ComponentEx3.vhd" "802e406eaeff18e4593eaddef279e72bfe43dc93" "20221104120648.959":
+  entity componentex3 at 4( 115) + 0 on 105;
+  architecture arch_componentex3 of componentex3 at 16( 304) + 0 on 106;
+file . "ComponentEx.vhd" "20a7443db7969b963c3934a607f7f780ae1fd169" "20221017142003.659":
+  entity componentex at 4( 105) + 0 on 21;
+  architecture arch_componentex of componentex at 16( 367) + 0 on 22;
+file . "tb_ComponentEx.vhd" "2800f57e640be38e76e4d32bcf35ac38a153b947" "20221017142003.687":
+  entity tb_componentex at 1( 0) + 0 on 23;
+  architecture arch_tb_componentex of tb_componentex at 8( 123) + 0 on 24;
+file . "tb_ComponentEx3.vhd" "d0eb5bc215bc005e8e6979de1f91ed804641f543" "20221104120649.893":
+  entity tb_componentex3 at 1( 0) + 0 on 107;
+  architecture arch_tb_componentex3 of tb_componentex3 at 8( 125) + 0 on 108;
+file . "tb_Decoder3x8.vhd" "7f21a4a2369ff5ebdefbca6cf2485954bba3c27b" "20221026001505.874":
+  entity tb_decoder3x8 at 1( 0) + 0 on 51;
+  architecture arch_tb_decoder3x8 of tb_decoder3x8 at 7( 94) + 0 on 52;
+file . "Decoder3x8/Decoder3x8.vhd" "be9da42bef55fffd22ad9832fffdaf974f1f1749" "20221123185146.648":
+  entity decoder3x8 at 4( 130) + 0 on 127;
+  architecture arch_decoder3x8 of decoder3x8 at 14( 356) + 0 on 128;
+file . "OR4x1/OR4x1.vhd" "f6e5f21ca0b38306ac9e0a89c839e94454b53eba" "20221123185147.199":
+  entity or4x1 at 4( 130) + 0 on 129;
+  architecture arch_or4x1 of or4x1 at 13( 297) + 0 on 130;
+file . "tb_Projeto02.vhd" "7e4596e959e55e8a62ca07eb3fe5c50eba7f98e1" "20221127220425.882":
+  entity tb_projeto02 at 1( 0) + 0 on 263;
+  architecture arch_tb_projeto02 of tb_projeto02 at 8( 119) + 0 on 264;
+file . "FSM/FSM.vhd" "301c6b49c97480fdd1107f4f5db4380bcacc1503" "20221206181144.412":
+  entity fsm at 1( 0) + 0 on 279;
+  architecture arch_fsm of fsm at 11( 241) + 0 on 280;
+file . "tb_Projeto03.vhd" "71df679b013485786385d7af4790f38bb0ab3d18" "20221212141639.310":
+  entity tb_projeto03 at 1( 0) + 0 on 401;
+  architecture arch_tb_projeto03 of tb_projeto03 at 8( 119) + 0 on 402;
+file . "Calculator/Calculator.vhd" "01ab1b750f95ef4fd2adfa19f159f882c177f0d6" "20221212141639.245":
+  entity calculator at 1( 0) + 0 on 397;
+  architecture arch_calculator of calculator at 14( 389) + 0 on 398;
+file . "Calculator/Datapath/SelectorALU_NUM/SelectorALU_NUM.vhd" "f07cf30a8746b6b677bc595d3227b9e4bbd7cab4" "20221212141639.060":
+  entity selectoralu_num at 2( 2) + 0 on 385;
+  architecture arch_selectoralu_num of selectoralu_num at 15( 312) + 0 on 386;
+file . "Calculator/Datapath/StackRegister/StackRegister.vhd" "8289a85055c8b4d19112dd3dad24f4d7f01836da" "20221212141639.116":
+  entity stackregister at 3( 47) + 0 on 389;
+  architecture arch_stackregister of stackregister at 15( 309) + 0 on 390;
+file . "Calculator/ControlBlock/ControlBlock.vhd" "8b39466c2e398630c20c7c4de6caeec443575be0" "20221212141639.179":
+  entity controlblock at 1( 0) + 0 on 393;
+  architecture arch_controlblock of controlblock at 16( 474) + 0 on 394;

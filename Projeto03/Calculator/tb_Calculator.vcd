@@ -1,5 +1,5 @@
 $date
-  Fri Dec 09 10:05:46 2022
+  Mon Dec 12 10:53:51 2022
 $end
 $version
   GHDL v0
@@ -16,30 +16,140 @@ $upscope $end
 $scope module tb_calculator $end
 $var reg 1 ! ent_clk $end
 $var reg 1 " ent_clk_enable $end
-$var reg 1 # ent_rst $end
-$var reg 1 $ ent_enter_num $end
-$var reg 1 % ent_enter_opr $end
-$var reg 4 & ent_num[3:0] $end
-$var reg 2 ' ent_opr[1:0] $end
-$var reg 8 ( sai_z0[0:7] $end
-$var reg 8 ) sai_z1[0:7] $end
-$var reg 8 * sai_z2[0:7] $end
-$var reg 8 + sai_z3[0:7] $end
+$var reg 1 # tb_rst $end
+$var reg 1 $ tb_enter_num $end
+$var reg 1 % tb_enter_opr $end
+$var reg 4 & tb_num[3:0] $end
+$var reg 2 ' tb_opr[1:0] $end
+$var reg 4 ( tb_z0[0:3] $end
 $scope module dut $end
-$var reg 1 , clk $end
-$var reg 1 - rst $end
-$var reg 1 . enter_num $end
-$var reg 1 / enter_opr $end
-$var reg 4 0 num[3:0] $end
-$var reg 2 1 opr[1:0] $end
-$var reg 8 2 z0[0:7] $end
-$var reg 8 3 z1[0:7] $end
-$var reg 8 4 z2[0:7] $end
-$var reg 8 5 z3[0:7] $end
+$var reg 1 ) clk $end
+$var reg 1 * rst $end
+$var reg 1 + enter_num $end
+$var reg 1 , enter_opr $end
+$var reg 4 - num[3:0] $end
+$var reg 2 . opr[1:0] $end
+$var reg 4 / z0[0:3] $end
+$var reg 1 0 interm_is_empty0 $end
+$var reg 1 1 interm_is_empty1 $end
+$var reg 1 2 interm_is_empty2 $end
+$var reg 1 3 interm_load_stack0 $end
+$var reg 1 4 interm_load_stack1 $end
+$var reg 1 5 interm_load_stack2 $end
+$var reg 1 6 interm_clear_stack0 $end
+$var reg 1 7 interm_clear_stack1 $end
+$var reg 1 8 interm_clear_stack2 $end
+$var reg 1 9 interm_select_alu_num $end
+$var reg 3 : interm_select_stack_pos[2:0] $end
+$var reg 3 ; interm_select_two_stack_pos[2:0] $end
+$scope module blocodecontrole $end
+$var reg 1 < clk $end
+$var reg 1 = enter_num $end
+$var reg 1 > enter_opr $end
+$var reg 1 ? reset $end
+$var reg 1 @ is_empty0 $end
+$var reg 1 A is_empty1 $end
+$var reg 1 B is_empty2 $end
+$var reg 1 C load_stack0 $end
+$var reg 1 D load_stack1 $end
+$var reg 1 E load_stack2 $end
+$var reg 1 F clear_stack0 $end
+$var reg 1 G clear_stack1 $end
+$var reg 1 H clear_stack2 $end
+$var reg 1 I select_alu_num $end
+$var reg 3 J select_stack_pos[2:0] $end
+$var reg 3 K select_two_stack_pos[2:0] $end
 $comment ps is not handled $end
 $comment ns is not handled $end
-$var reg 3 6 y[2:0] $end
-$var reg 1 7 stack_enable $end
+$var reg 3 L y[2:0] $end
+$upscope $end
+$scope module blocooperacional $end
+$var reg 1 M clk $end
+$var reg 4 N num[3:0] $end
+$var reg 2 O opr[1:0] $end
+$var reg 1 P sel_alu_num $end
+$var reg 3 Q sel_two_stack_pos[2:0] $end
+$var reg 3 R sel_stack_pos[2:0] $end
+$var reg 1 S clear_stack0 $end
+$var reg 1 T clear_stack1 $end
+$var reg 1 U clear_stack2 $end
+$var reg 1 V load_stack0 $end
+$var reg 1 W load_stack1 $end
+$var reg 1 X load_stack2 $end
+$var reg 1 Y isempty_stack0 $end
+$var reg 1 Z isempty_stack1 $end
+$var reg 1 [ isempty_stack2 $end
+$var reg 4 \ result_output[3:0] $end
+$comment ps is not handled $end
+$comment ns is not handled $end
+$var reg 3 ] y[2:0] $end
+$var reg 4 ^ stack2_in[3:0] $end
+$var reg 4 _ stack1_in[3:0] $end
+$var reg 4 ` stack0_in[3:0] $end
+$var reg 4 a stack2_out[3:0] $end
+$var reg 4 b stack1_out[3:0] $end
+$var reg 4 c stack0_out[3:0] $end
+$var reg 4 d alu_num1[3:0] $end
+$var reg 4 e alu_num2[3:0] $end
+$var reg 4 f result_alu[3:0] $end
+$scope module inputselector $end
+$var reg 4 g x0[3:0] $end
+$var reg 4 h x1[3:0] $end
+$var reg 1 i sel0 $end
+$var reg 3 j sel1[2:0] $end
+$var reg 4 k y0[3:0] $end
+$var reg 4 l y1[3:0] $end
+$var reg 4 m y2[3:0] $end
+$upscope $end
+$scope module stack0 $end
+$var reg 4 n x[3:0] $end
+$var reg 1 o load $end
+$var reg 1 p clear $end
+$var reg 1 q clk $end
+$var reg 1 r isempty $end
+$var reg 4 s z[3:0] $end
+$comment ps is not handled $end
+$comment ns is not handled $end
+$var reg 2 t y[1:0] $end
+$upscope $end
+$scope module stack1 $end
+$var reg 4 u x[3:0] $end
+$var reg 1 v load $end
+$var reg 1 w clear $end
+$var reg 1 x clk $end
+$var reg 1 y isempty $end
+$var reg 4 z z[3:0] $end
+$comment ps is not handled $end
+$comment ns is not handled $end
+$var reg 2 { y[1:0] $end
+$upscope $end
+$scope module stack2 $end
+$var reg 4 | x[3:0] $end
+$var reg 1 } load $end
+$var reg 1 !" clear $end
+$var reg 1 "" clk $end
+$var reg 1 #" isempty $end
+$var reg 4 $" z[3:0] $end
+$comment ps is not handled $end
+$comment ns is not handled $end
+$var reg 2 %" y[1:0] $end
+$upscope $end
+$scope module outputselector $end
+$var reg 4 &" x0[3:0] $end
+$var reg 4 '" x1[3:0] $end
+$var reg 4 (" x2[3:0] $end
+$var reg 3 )" sel[2:0] $end
+$var reg 4 *" y0[3:0] $end
+$var reg 4 +" y1[3:0] $end
+$upscope $end
+$scope module stackalu $end
+$var reg 2 ," operator[1:0] $end
+$var reg 4 -" num1[3:0] $end
+$var reg 4 ." num2[3:0] $end
+$var reg 4 /" result[3:0] $end
+$var reg 4 0" result_interm[3:0] $end
+$upscope $end
+$upscope $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
@@ -51,337 +161,1045 @@ $enddefinitions $end
 U%
 bUUUU &
 bUU '
-b11111111 (
-b11111111 )
-b11111111 *
-b11111111 +
-0,
-0-
-1.
-U/
-bUUUU 0
-bUU 1
-b11111111 2
-b11111111 3
-b11111111 4
-b11111111 5
-b000 6
-U7
+bUUUU (
+0)
+0*
+1+
+U,
+bUUUU -
+bUU .
+bUUUU /
+U0
+U1
+U2
+03
+04
+05
+16
+17
+18
+19
+b100 :
+b110 ;
+0<
+1=
+U>
+0?
+U@
+UA
+UB
+0C
+0D
+0E
+1F
+1G
+1H
+1I
+b100 J
+b110 K
+b000 L
+0M
+bUUUU N
+bUU O
+1P
+b110 Q
+b100 R
+1S
+1T
+1U
+0V
+0W
+0X
+UY
+UZ
+U[
+bUUUU \
+bUUU ]
+bUUUU ^
+bUUUU _
+bUUUU `
+bUUUU a
+bUUUU b
+bUUUU c
+bUUUU d
+bUUUU e
+bUUUU f
+bUUUU g
+bUUUU h
+1i
+b100 j
+bUUUU k
+bUUUU l
+bUUUU m
+bUUUU n
+0o
+1p
+0q
+Ur
+bUUUU s
+b00 t
+bUUUU u
+0v
+1w
+0x
+Uy
+bUUUU z
+b00 {
+bUUUU |
+0}
+1!"
+0""
+U#"
+bUUUU $"
+b00 %"
+bUUUU &"
+bUUUU '"
+bUUUU ("
+b110 )"
+bUUUU *"
+bUUUU +"
+bUU ,"
+bUUUU -"
+bUUUU ."
+bUUUU /"
+bUUUU 0"
 #10000000
 1!
-1,
-b001 6
+b0000 (
+1)
+b0000 /
+10
+11
+12
+06
 07
+08
+1<
+1@
+1A
+1B
+0F
+0G
+0H
+b001 L
+1M
+0S
+0T
+0U
+1Y
+1Z
+1[
+b0000 \
+b0000 a
+b0000 b
+b0000 c
+b0000 d
+b0000 e
+0p
+1q
+1r
+b0000 s
+b10 t
+0w
+1x
+1y
+b0000 z
+b10 {
+0!"
+1""
+1#"
+b0000 $"
+b10 %"
+b0000 &"
+b0000 '"
+b0000 ("
+b0000 *"
+b0000 +"
+b0000 -"
+b0000 ."
 #20000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #30000000
 1!
-1,
-b010 6
+1)
+13
+b001 :
+b011 ;
+1<
+1C
+b001 J
+b011 K
+b010 L
+1M
+b011 Q
+b001 R
+1V
+b001 j
+1o
+1q
+b00 t
+1x
+b00 {
+1""
+b00 %"
+b011 )"
 #40000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #50000000
 1!
-1,
-b001 6
+1)
+00
+03
+b100 :
+b110 ;
+1<
+0@
+0C
+b100 J
+b110 K
+b011 L
+1M
+b110 Q
+b100 R
+0V
+0Y
+bUUUU c
+b100 j
+0o
+1q
+0r
+bUUUU s
+b01 t
+1x
+1""
+bUUUU &"
+b110 )"
 #60000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #70000000
 1!
-1,
-b010 6
+1)
+1<
+1M
+1q
+b00 t
+1x
+1""
 #80000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #90000000
 1!
-1,
-b001 6
+1)
+1<
+1M
+1q
+1x
+1""
 #100000000
 0!
 0$
-0,
-0.
+0)
+0+
+0<
+0=
+0M
+0q
+0x
+0""
 #110000000
 1!
-1,
-b010 6
+1)
+1<
+b001 L
+1M
+1q
+1x
+1""
 #120000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #130000000
 1!
-1,
-b001 6
+1)
+1<
+1M
+1q
+1x
+1""
 #140000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #150000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #160000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #170000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #180000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #190000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #200000000
 0!
 1$
-0,
-1.
+0)
+1+
+0<
+1=
+0M
+0q
+0x
+0""
 #210000000
 1!
-1,
+bUUUU (
+1)
+bUUUU /
+14
+b010 :
+b011 ;
+1<
+1D
+b010 J
+b011 K
+b010 L
+1M
+b011 Q
+b010 R
+1W
+bUUUU \
+bUUUU d
+b010 j
+1q
+1v
+1x
+1""
+b011 )"
+bUUUU *"
+bUUUU -"
 #220000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #230000000
 1!
-1,
+1)
+01
+04
+b100 :
+b110 ;
+1<
+0A
+0D
+b100 J
+b110 K
+b011 L
+1M
+b110 Q
+b100 R
+0W
+0Z
+bUUUU b
+b100 j
+1q
+0v
+1x
+0y
+bUUUU z
+b01 {
+1""
+bUUUU '"
+b110 )"
 #240000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #250000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+b00 {
+1""
 #260000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #270000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #280000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #290000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #300000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #310000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #320000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #330000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #340000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #350000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #360000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #370000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #380000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #390000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #400000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #410000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #420000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #430000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #440000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #450000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #460000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #470000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #480000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #490000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #500000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #510000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #520000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #530000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #540000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #550000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #560000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #570000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #580000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #590000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #600000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #610000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #620000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #630000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #640000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #650000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #660000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #670000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #680000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #690000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #700000000
 0!
 1#
-0,
-1-
+0)
+1*
+0<
+1?
+0M
+0q
+0x
+0""
 #710000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #720000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #730000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #740000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #750000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #760000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #770000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #780000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #790000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #800000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #810000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #820000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #830000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #840000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #850000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #860000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #870000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #880000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #890000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #900000000
 0!
 0#
-0,
-0-
+0)
+0*
+0<
+0?
+0M
+0q
+0x
+0""
 #910000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #920000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #930000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #940000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #950000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #960000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #970000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #980000000
 0!
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #990000000
 1!
-1,
+1)
+1<
+1M
+1q
+1x
+1""
 #1000000000
 0!
 0"
-0,
+0)
+0<
+0M
+0q
+0x
+0""
 #1010000000

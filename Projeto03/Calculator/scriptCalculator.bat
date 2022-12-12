@@ -1,7 +1,11 @@
-:: Modifique a linha abaixo para o caminho do seu computador onde se encontra os seus arquivos fonte a serem compilados e simulados.
-cd C:\dev\lsd-2022-2\Projeto03\Calculator
+ghdl -a Datapath/ALU/ALU.vhd
+ghdl -a Datapath/SelectorALU_NUM/SelectorALU_NUM.vhd
+ghdl -a Datapath/SelectorTwoStack/SelectorTwoStack.vhd
+ghdl -a Datapath/StackRegister/StackRegister.vhd
 
-:: Modifique as linhas seguintes para incluir os arquivos .vhd que deseja analisar (compilar).
+ghdl -a Datapath/Datapath.vhd
+ghdl -a ControlBlock/ControlBlock.vhd
+
 ghdl -a Calculator.vhd
 pause
 
